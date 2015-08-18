@@ -1,0 +1,51 @@
+<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li class="active"><a href="index.html#">Overview <span class="sr-only">(current)</span></a></li>
+		<li><a href="index.html#">Reports</a></li>
+		<li><a href="index.html#">Analytics</a></li>
+		<li><a href="index.html#">Export</a></li>
+	</ul>
+	<ul class="nav nav-sidebar">
+		<li><a href="index.html">Nav item</a></li>
+		<li><a href="index.html">Nav item again</a></li>
+		<li><a href="index.html">One more nav</a></li>
+		<li><a href="index.html">Another nav item</a></li>
+		<li><a href="index.html">More navigation</a></li>
+	</ul>
+	<ul class="nav nav-sidebar">
+		<li><a href="index.html">Nav item again</a></li>
+		<li><a href="index.html">One more nav</a></li>
+		<li><a href="index.html">Another nav item</a></li>
+	</ul>
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+	<div ng-init="tab=1">
+		
+	<ul class="tabs-nav">
+	  <li><a ng-click="tab=1" ng-class="{'active' : tab==1}">Aba 1</a></li>
+	  <li><a ng-click="tab=2" ng-class="{'active' : tab==2}">Aba 2</a></li>
+	  <li><a ng-click="tab=3" ng-class="{'active' : tab==3}">Aba 3</a></li>
+	</ul>
+	
+		<div class="tabs-container">
+			<div class="tab-content" ng-show="tab == 1">
+				<h3>Primeira aba</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores laborum doloribus iusto quaerat dicta nemo aperiam. Voluptas repudiandae, enim, illum perspiciatis harum officia inventore iusto fugit, repellat asperiores maiores.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores laborum doloribus iusto quaerat dicta nemo aperiam. Voluptas repudiandae, enim, illum perspiciatis harum officia inventore iusto fugit, repellat asperiores maiores.</p>
+			</div>
+	
+			<div class="tab-content" ng-show="tab == 2">
+				<h3>Segunda aba</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit dolorem quae, quo nobis omnis? Officia quibusdam quaerat assumenda ipsam, et quos laborum quae ex iste numquam laboriosam obcaecati iure.</p>
+			</div>
+	
+			<div class="tab-content" ng-show="tab == 3">
+				<h3>Terceira aba</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis totam quibusdam maxime quidem id ducimus, esse aliquid in facilis quisquam ut possimus enim voluptatum quas accusamus, necessitatibus provident. Doloremque, nulla.</p>
+			</div>
+	
+		</div>
+	</div>
+</div>

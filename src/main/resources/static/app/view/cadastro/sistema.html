@@ -1,0 +1,52 @@
+<h4 class="page-header">Sistema</h4>
+  
+<form action="index.html">
+	<input type="hidden" ng-model="sistema.idSistema">
+	<input type="text" class="form-control" ng-model="sistema.nome" placeholder="Nome do Sistema">
+  	<input type="text" class="form-control" ng-model="sistema.descricao" placeholder="Descricao do Sistema">
+  	<select class="form-control">
+  		<option ng-selected="item.selected" ng-model="sistema.ativo">Selecione</option>
+	    <option ng-selected="item.selected" ng-model="sistema.ativo">Ativo</option>
+	    <option ng-selected="item.selected" ng-model="sistema.ativo">Inativo</option>
+  	</select>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="submit" class="btn btn-primary">Salvar</button>
+	  	<a class="btn btn-success" href="view.html">Pesquisar</a>
+		<a href="template.html" class="btn btn-default">Limpar</a>
+	  </div>
+	</div>
+
+  </form>
+  
+   	<hr />
+ 	<div id="list" class="row">
+	
+	<div class="table-responsive col-md-12">
+		<table class="table table-striped" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Descrição</th>
+					<th class="actions">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1001</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+					<td>Jes</td>
+					<td>01/01/2015</td>
+					<td class="actions">
+						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>

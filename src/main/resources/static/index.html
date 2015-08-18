@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="UserApp" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Entrar</title>
+
+<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="app/view/css/login.css" rel="stylesheet">
+<link href="app/view/css/principal.css" rel="stylesheet">
+<link href="app/view/css/abas.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html#">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li class="dropdown">
+                  <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#!/sistema/">Sistemas</a></li>
+                    <li><a href="index.html#">Another action</a></li>
+                    <li><a href="index.html#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="index.html#">Separated link</a></li>
+                    <li><a href="index.html#">One more separated link</a></li>
+                  </ul>
+                </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" ng-controller="MainController" style="margin-top: 20px;">
+        <div class="row">
+        	<div class="col-sm-12" ng-view> </div>
+        </div>
+    </div>
+
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    
+    <script src="app/main.js"></script>
+    
+    <script src="app/login/loginController.js"></script>
+    <script src="app/login/loginService.js"></script>
+
+	<script src="app/principalUser/principalController.js"></script>
+	
+	<!-- CADASTRO -->
+	<script src="app/cadastro/sistema/sistemaController.js"></script>
+    <script src="app/cadastro/sistema/sistemaService.js"></script>
+</body>
+</html>
