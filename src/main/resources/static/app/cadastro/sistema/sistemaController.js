@@ -1,14 +1,35 @@
 angular.module('UserApp')
     .controller('SistemaController', function ($scope, $rootScope, $location, $cookieStore, SistemaService) {
-    	$scope.salvar = function(sistema) {
-    		LoginService.buscarUsuario(
-    				{sistema : $scope.sistema},
-    				function(sistema) {
-    					console.log('Salvo com sucesso');
+    	
+    	$scope.sistemas = [];
+    	$scope.sistema = {};
+    	
+    	SistemaService.buscarTodosSistemas(
+				{},
+				function(sistemas){
+    				$scope.sistemas = sistemas;
+    			}, function(){
+    				console.log("Erro: buscar filmes");
+    		});
+    	
+    	$scope.editarSistema = function(sistema) {
+    		$scope.sistema = sistema;
+    	}
+    	
+    	$scope.excluirSistema = function(sistema) {
+    		
+    	}
+    	
+    	$scope.limparSistema = function() {
+    		$scope.sistema = {};
+    	}
+    	
+    	$scope.buscarSistema = function(sistema) {
+    		
+    	}
+    	
+    	$scope.salvarSistema = function(sistema) {
+    		
+    	}
 
-    				}, function() {
-    					console.log('Erro ao buscar usuarios');
-    				}
-    		);
-		}
     });
