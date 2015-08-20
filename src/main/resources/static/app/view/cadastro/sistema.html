@@ -4,11 +4,9 @@
 	<input type="hidden" ng-model="sistema.idSistema">
 	<input type="text" class="form-control" ng-model="sistema.nome" placeholder="Nome do Sistema">
   	<input type="text" class="form-control" ng-model="sistema.descricao" placeholder="Descricao do Sistema">
-  	<select class="form-control">
-  		<option ng-selected="item.selected" ng-model="sistema.ativo">Selecione</option>
-	    <option ng-selected="item.selected" ng-model="sistema.ativo">Ativo</option>
-	    <option ng-selected="item.selected" ng-model="sistema.ativo">Inativo</option>
-  	</select>
+  	<label class="checkbox-inline">
+  	<input type="checkbox" ng-model="sistema.flagAtivo"> Ativo
+  	</label>
   	
 	<hr />
 	
