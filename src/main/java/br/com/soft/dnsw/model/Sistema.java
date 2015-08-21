@@ -1,7 +1,6 @@
 package br.com.soft.dnsw.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,17 +28,11 @@ public class Sistema implements Serializable {
 	private Boolean flagAtivo;
 	
 	@Column(name = "data_alteracao")
-	private Date dataCriacao;
+	private String dataCriacao;
 	
 	@Column(name = "versao")
 	private Integer versao;
 	
-	@Column(name = "id_usuario_criacao")
-	private Usuario usuarioCriacao;
-	
-	@Column(name = "id_usuario_alteracao")
-	private Usuario usuarioAlteracao;
-
 	public Integer getIdSistema() {
 		return idSistema;
 	}
@@ -72,11 +65,11 @@ public class Sistema implements Serializable {
 		this.flagAtivo = flagAtivo;
 	}
 
-	public Date getDataCriacao() {
+	public String getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(String dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
@@ -86,22 +79,6 @@ public class Sistema implements Serializable {
 
 	public void setVersao(Integer versao) {
 		this.versao = versao;
-	}
-
-	public Usuario getUsuarioCriacao() {
-		return usuarioCriacao;
-	}
-
-	public void setUsuarioCriacao(Usuario usuarioCriacao) {
-		this.usuarioCriacao = usuarioCriacao;
-	}
-
-	public Usuario getUsuarioAlteracao() {
-		return usuarioAlteracao;
-	}
-
-	public void setUsuarioAlteracao(Usuario usuarioAlteracao) {
-		this.usuarioAlteracao = usuarioAlteracao;
 	}
 
 }
