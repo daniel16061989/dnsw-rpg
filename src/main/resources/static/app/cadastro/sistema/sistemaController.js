@@ -42,8 +42,10 @@ angular.module('UserApp')
 	    		$scope.sistema,
 				function(sistema) {
 					console.log(sistema);
+					buscarTodos();
 					
-					
+					$scope.mensagem.info = true;
+    				$scope.mensagem.texto = 'Busca efetuada com sucesso';
 				}, function() {
 					console.log('Erro ao salvar sistema');
 				});
@@ -56,7 +58,7 @@ angular.module('UserApp')
         				$scope.sistemas = sistemas;
         				
         				$scope.mensagem.info = true;
-        				$scope.mensagem.texto = 'Busca efetuada com sucesso';
+        				$scope.mensagem.texto = 'Busca Efetuada com sucesso';
         			}, function(){
         				console.log("Erro: buscar sistema");
         		});

@@ -48,19 +48,6 @@
       </div>
     </nav>
     
-    <div class="alert alert-success" role="alert" ng-show="{{mensagem.success}}">
-      {{mensagem.texto}}
-    </div>
-    <div class="alert alert-info" role="alert" ng-show="{{mensagem.info}}">
-      {{mensagem.texto}}
-    </div>
-    <div class="alert alert-warning" role="alert" ng-show="{{mensagem.alert}}">
-      {{mensagem.texto}}
-    </div>
-    <div class="alert alert-danger" role="alert" ng-show="{{mensagem.danger}}">
-      {{mensagem.texto}}
-    </div>
-    
     <div class="container" style="margin-top: 20px;">
         <div class="row">
         	<div class="col-sm-12" ng-view> </div>
@@ -83,6 +70,7 @@
     <script src="app/login/loginService.js"></script>
 
 	<script src="app/principalUser/principalController.js"></script>
+	<script src="app/principalUser/mensagemDirective.js"></script>
 	
 	<!-- CADASTRO -->
 	<script src="app/cadastro/sistema/sistemaController.js"></script>
