@@ -1,4 +1,4 @@
-angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies'])
+angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', 'pascalprecht.translate'])
     .config(function($routeProvider, $locationProvider) {
     	$locationProvider.hashPrefix('!');
     	
@@ -20,5 +20,10 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies'])
 			});
     })
     .controller('MainController', function ($scope, $rootScope, $location) {
-    	
+    	$scope.mensagem = {};
+    	$scope.mensagem.success = false;
+    	$scope.mensagem.info = false;
+    	$scope.mensagem.warning = false;
+    	$scope.mensagem.danger = false;
+    	$scope.mensagem.texto = '';
     });

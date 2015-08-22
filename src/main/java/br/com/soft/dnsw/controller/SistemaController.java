@@ -28,6 +28,20 @@ public class SistemaController {
 		return sistemaRepository.findByFlagAtivo(Boolean.TRUE);
 	}
 	
+	@RequestMapping(method = RequestMethod.PUT)
+	public @ResponseBody Sistema update(@RequestBody String sistema) {
+		Gson gson = new Gson();
+		Sistema s = new Sistema();
+		
+		s = gson.fromJson(sistema, Sistema.class);
+		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		s.setDataAlteracao(simpleDateFormat.format(new Date()));
+		
+		return sistemaRepository.save(s);
+	}
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody Sistema save(@RequestBody String sistema) {
 		Gson gson = new Gson();
@@ -39,7 +53,6 @@ public class SistemaController {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			
 			s.setDataCriacao(simpleDateFormat.format(new Date()));
-			s.setVersao(1);
 		}
 		
 		return sistemaRepository.save(s);

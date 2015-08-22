@@ -27,11 +27,11 @@ public class Sistema implements Serializable {
 	@Column(name = "flag_ativo")
 	private Boolean flagAtivo;
 	
-	@Column(name = "data_alteracao")
+	@Column(name = "data_criacao")
 	private String dataCriacao;
 	
-	@Column(name = "versao")
-	private Integer versao;
+	@Column(name = "data_alteracao")
+	private String dataAlteracao;
 	
 	public Integer getIdSistema() {
 		return idSistema;
@@ -73,12 +73,12 @@ public class Sistema implements Serializable {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public Integer getVersao() {
-		return versao;
+	public String getDataAlteracao() {
+		return dataAlteracao;
 	}
 
-	public void setVersao(Integer versao) {
-		this.versao = versao;
+	public void setDataAlteracao(String dataAlteracao) {
+		this.dataAlteracao = dataAlteracao;
 	}
 
 }

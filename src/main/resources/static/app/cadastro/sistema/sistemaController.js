@@ -7,14 +7,18 @@ angular.module('UserApp')
     		$scope.sistema = sistema;
     	}
     	
-    	$scope.excluirSistema = function(sistema) {
-    		SistemaService.deletarSistema(
+    	$scope.inativarSistema = function() {
+    		$scope.sistema.flagAtivo = false;
+    		
+    		SistemaService.atualizarSistema(
 	    		{},
 	    		$scope.sistema,
 				function(sistema) {
 					console.log(sistema);
+					
+					
 				}, function() {
-					console.log('Erro ao excluir sistema');
+					console.log('Erro ao atualizar sistema');
 				});
     	}
     	
@@ -22,7 +26,7 @@ angular.module('UserApp')
     		$scope.sistema = {};
     	}
     	
-    	$scope.buscarSistema = function(sistema) {
+    	$scope.buscarSistema = function() {
     		SistemaService.buscarSistema(
 	    		{},
 				function(sistemas){
@@ -32,17 +36,17 @@ angular.module('UserApp')
 				});
     	}
     	
-    	$scope.salvarSistema = function(sistema) {
+    	$scope.salvarSistema = function() {
     		SistemaService.salvarSistema(
-    	    		{},
-    	    		$scope.sistema,
-    				function(sistema) {
-    					console.log(sistema);
-    					
-    					
-    				}, function() {
-    					console.log('Erro ao salvar sistema');
-    				});
+	    		{},
+	    		$scope.sistema,
+				function(sistema) {
+					console.log(sistema);
+					
+					
+				}, function() {
+					console.log('Erro ao salvar sistema');
+				});
     	}
     	
     	function buscarTodos() {
@@ -51,7 +55,8 @@ angular.module('UserApp')
     				function(sistemas){
         				$scope.sistemas = sistemas;
         				
-        				console.log(1);
+        				$scope.mensagem.info = true;
+        				$scope.mensagem.texto = 'Busca efetuada com sucesso';
         			}, function(){
         				console.log("Erro: buscar sistema");
         		});
