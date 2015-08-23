@@ -1,7 +1,7 @@
 angular.module('UserApp')
-    .factory('SistemaService', function($resource) {
+    .factory('SistemaService', function($resource, $rootScope) {
         
-        var resource = $resource('http://localhost:8080/sistema', {}, 
+        var resource = $resource($rootScope.url+'sistema', {}, 
     			{updateNow: {
     				method: 'PUT'
     			}
@@ -10,13 +10,9 @@ angular.module('UserApp')
     	var s = {};
 
     	s.buscarSistema = function(params, successFn, errorFn){
-    		resource.get(params, successFn, errorFn);
-    	};
-    	
-    	s.buscarTodosSistemas = function(params, successFn, errorFn){
     		resource.query(params, successFn, errorFn);
     	};
-
+    	
     	s.atualizarSistema = function(params, payLoad, successFn, errorFn){
     		resource.updateNow(params, payLoad, successFn, errorFn);
     	};

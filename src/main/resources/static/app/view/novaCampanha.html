@@ -1,0 +1,22 @@
+<h4 class="page-header">Crie sua Campanha</h4>
+
+<form name="formNovaCampanha">
+	<input type="hidden" ng-model="campanha.idCampanha">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option>Ketchup</option>
+	    <option>Relish</option>
+  	</select>
+	<input type="text" class="form-control" ng-model="campanha.nome" placeholder="Nome da Campanha">
+  	<input type="text" class="form-control" ng-model="campanha.descricao" placeholder="Breve descrição da Campanha">
+  	<input type="text" class="form-control" ng-model="campanha.historia" placeholder="História da Campanha">
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarCampanha()">Salvar</button>
+	  </div>
+	</div>
+
+</form>

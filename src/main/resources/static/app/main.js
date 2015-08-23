@@ -11,6 +11,12 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
                 controller: 'PrincipalController',
                 templateUrl: 'app/view/principal.html'
             })
+            .when('/nova-campanha', {
+                controller: 'NovaCampanhaController',
+                templateUrl: 'app/view/novaCampanha.html'
+            })
+            
+            
             .when('/sistema', {
                 controller: 'SistemaController',
                 templateUrl: 'app/view/cadastro/sistema.html'
@@ -20,6 +26,8 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
 			});
     })
     .controller('MainController', function ($scope, $rootScope, $location) {
+    	$rootScope.url = 'http://localhost:8080/';
+    	
     	$scope.mensagem = {};
     	$scope.mensagem.success = false;
     	$scope.mensagem.info = false;

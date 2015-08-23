@@ -7,33 +7,29 @@ angular.module('UserApp')
     		$scope.sistema = sistema;
     	}
     	
-    	$scope.inativarSistema = function() {
+    	$scope.inativarSistema = function(sistema) {
+    		$scope.sistema = sistema;
     		$scope.sistema.flagAtivo = false;
     		
     		SistemaService.atualizarSistema(
 	    		{},
 	    		$scope.sistema,
 				function(sistema) {
-					console.log(sistema);
-					
-					
+	    			init();
+	    			
+	    			$scope.mensagem.info = true;
+    				$scope.mensagem.texto = 'Sistema inativo com sucesso';
 				}, function() {
 					console.log('Erro ao atualizar sistema');
 				});
     	}
     	
     	$scope.limparSistema = function() {
-    		$scope.sistema = {};
+    		init();
     	}
     	
     	$scope.buscarSistema = function() {
-    		SistemaService.buscarSistema(
-	    		{},
-				function(sistemas){
-					$scope.sistemas = sistemas;
-				}, function(){
-					console.log("Erro: buscar sistema");
-				});
+    		buscarSistemas();
     	}
     	
     	$scope.salvarSistema = function() {
@@ -41,36 +37,36 @@ angular.module('UserApp')
 	    		{},
 	    		$scope.sistema,
 				function(sistema) {
-					console.log(sistema);
-					buscarTodos();
+					init();
 					
 					$scope.mensagem.info = true;
-    				$scope.mensagem.texto = 'Busca efetuada com sucesso';
+    				$scope.mensagem.texto = 'Sistema salvo com sucesso';
 				}, function() {
 					console.log('Erro ao salvar sistema');
 				});
     	}
     	
-    	function buscarTodos() {
-    		SistemaService.buscarTodosSistemas(
-    				{},
-    				function(sistemas){
-        				$scope.sistemas = sistemas;
-        				
-        				$scope.mensagem.info = true;
-        				$scope.mensagem.texto = 'Busca Efetuada com sucesso';
-        			}, function(){
-        				console.log("Erro: buscar sistema");
-        		});
-    	}
-    	
     	function init() {
+    		$scope.mensagem.info = false;
+    		$scope.mensagem.danger = false;
+    		
     		$scope.sistemas = [];
     		
     		$scope.sistema = {};
         	$scope.sistema.flagAtivo = true;
         	
-        	buscarTodos();
+        	buscarSistemas();
+    	}
+    	
+    	function buscarSistemas() {
+    		SistemaService.buscarSistema(
+	    		{sistema : $scope.sistema},
+				function(sistemas){
+					$scope.sistemas = sistemas;
+					
+				}, function(){
+					console.log("Erro: buscar sistema");
+				});
     	}
 
     });

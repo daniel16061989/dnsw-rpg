@@ -2,7 +2,7 @@
 
 <div mensagem-directive></div>
   
-<form action="index.html">
+<form name="formSistema">
 	<input type="hidden" ng-model="sistema.idSistema">
 	<input type="text" class="form-control" ng-model="sistema.nome" placeholder="Nome do Sistema">
   	<input type="text" class="form-control" ng-model="sistema.descricao" placeholder="Descricao do Sistema">
@@ -23,9 +23,9 @@
   </form>
   
    	<hr />
- 	<div id="list" class="row">
 	
 	<div class="table-responsive col-md-12">
+	
 		<table class="table table-striped" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
@@ -44,7 +44,7 @@
 					<td>{{sistema.flagAtivo}}</td>
 					<td class="actions">
 						<a class="btn btn-warning btn-xs" ng-click="editarSistema(sistema)">{{'EDIT' | translate}}</a>
-						<a class="btn btn-danger btn-xs" ng-click="inativarSistema()">{{'INACTIVATE' | translate}}</a>
+						<a class="btn btn-danger btn-xs" ng-click="inativarSistema(sistema)">{{'INACTIVATE' | translate}}</a>
 					</td>
 				</tr>
 			</tbody>

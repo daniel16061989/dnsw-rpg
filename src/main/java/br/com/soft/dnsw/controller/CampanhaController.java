@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.soft.dnsw.repository.CampanhaRepository;
+
 @RestController
-@RequestMapping("/Campanha")
+@RequestMapping("/campanha")
 public class CampanhaController {
 
 	@Autowired
-	private CampanhaController campanhaRepository;
+	private CampanhaRepository campanhaRepository;
 
 }
