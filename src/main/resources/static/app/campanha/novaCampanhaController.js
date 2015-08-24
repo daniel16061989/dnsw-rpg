@@ -1,5 +1,5 @@
 angular.module('UserApp')
-    .controller('NovaCampanhaController', function ($scope, $rootScope, $location, $cookieStore, SistemaService) {
+    .controller('NovaCampanhaController', function ($scope, $rootScope, $location, $cookieStore, CampanhaService) {
     	
     });
 
