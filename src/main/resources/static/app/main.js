@@ -14,7 +14,7 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
             .when('/nova-campanha', {
                 controller: 'NovaCampanhaController',
                 templateUrl: 'app/view/novaCampanha.html'
-            })
+            }) 
             
             
             .when('/sistema', {
