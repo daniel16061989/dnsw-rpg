@@ -14,7 +14,12 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
             .when('/nova-campanha', {
                 controller: 'NovaCampanhaController',
                 templateUrl: 'app/view/novaCampanha.html'
-            }) 
+            })
+            .when('/escolher-ficha-batalha', {
+                controller: 'EscolherFichaBatalhaController',
+                templateUrl: 'app/view/escolherFichaBatalha.html'
+            })
+            
             
             
             .when('/sistema', {
@@ -34,4 +39,5 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
     	$scope.mensagem.warning = false;
     	$scope.mensagem.danger = false;
     	$scope.mensagem.texto = '';
+    	
     });

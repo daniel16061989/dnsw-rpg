@@ -4,13 +4,13 @@
 	<input type="hidden" ng-model="campanha.idCampanha">
 	<select class="form-control">
 	    <option>Selecione o Sistema de RPG</option>
-	    <option>Ketchup</option>
-	    <option>Relish</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
   	</select>
-	<input type="text" class="form-control" ng-model="campanha.nome" placeholder="Nome da Campanha">
-  	<input type="text" class="form-control" ng-model="campanha.descricao" placeholder="Breve descrição da Campanha">
-  	<input type="text" class="form-control" ng-model="campanha.historia" placeholder="História da Campanha">
-  	
+	<input type="text" class="form-control" ng-model="campanha.nome" placeholder="{{'NAME_CAMPAIGN' | translate}}">
+  	<input type="text" class="form-control" ng-model="campanha.descricao" placeholder="{{'DESCRIPTION_CAMPAIGN' | translate}}">
+  	<input type="text" class="form-control" ng-model="campanha.historia" placeholder="{{'HISTORY_CAMPAIGN' | translate}}">
+  	<input type="datetime" class="form-control" ng-model="campanha.dataInicio" placeholder="Data de inicio da primeira jogatina">
+  	<input type="datetime" class="form-control" ng-model="campanha.dataFim" placeholder="Data de fim da primeira jogatina">
 	<hr />
 	
 	<div class="row">

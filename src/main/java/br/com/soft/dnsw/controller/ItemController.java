@@ -16,32 +16,32 @@ import br.com.soft.dnsw.repository.ItemRepository;
 @RequestMapping("/items")
 public class ItemController {
     @Autowired
-    private ItemRepository repo;
+    private ItemRepository itemRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List findItems(){
-        return repo.findAll();
+    public List<Item> findItems(){
+        return itemRepository.findAll();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Item getItem(@PathVariable Integer id){
-        return repo.findOne(id);
+        return itemRepository.findOne(id);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public Item addItem(@RequestBody Item item){
         item.setIdItem(null);
-        return repo.saveAndFlush(item);
+        return itemRepository.saveAndFlush(item);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public Item updateItem(@RequestBody Item updatedItem, @PathVariable Integer id){
         updatedItem.setIdItem(id);
-        return repo.saveAndFlush(updatedItem);
+        return itemRepository.saveAndFlush(updatedItem);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteItem(@PathVariable Integer id){
-        repo.delete(id);
+        itemRepository.delete(id);
     }
 }

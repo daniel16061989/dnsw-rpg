@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +34,14 @@ public class Personagem implements Serializable {
 	
 	@Column(name = "dinheiro")
 	private Double dinheiro;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_campanha")
+	private Campanha campanha;
 
 	public Integer getIdPersonagem() {
 		return idPersonagem;
@@ -79,6 +89,22 @@ public class Personagem implements Serializable {
 
 	public void setDinheiro(Double dinheiro) {
 		this.dinheiro = dinheiro;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Campanha getCampanha() {
+		return campanha;
+	}
+
+	public void setCampanha(Campanha campanha) {
+		this.campanha = campanha;
 	}
 
 }

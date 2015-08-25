@@ -33,8 +33,18 @@ public class Campanha implements Serializable {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@Column(name = "pre_requisito")
-	private String pre_requisito;
+	@Column(name = "historia")
+	private String historia;
+	
+	@Column(name = "data_criacao")
+	private String dataCriacao;
+	
+	// proximo dia de jogatina, pega da tb_agendamento_campanha
+	@Column(name = "data_inicio")
+	private String dataInicio;
+	
+	@Column(name = "data_frim")
+	private String dataFim;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_sistema")
@@ -42,6 +52,9 @@ public class Campanha implements Serializable {
 	
 	@Column(name = "flag_ativo")
 	private Boolean flagAtivo;
+	
+	public static final Character STATUS_ATIVO = 'A';
+	public static final Character STATUS_INATIVO = 'I';
 
 	public Integer getIdCampanha() {
 		return idCampanha;
@@ -82,13 +95,37 @@ public class Campanha implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public String getPre_requisito() {
-		return pre_requisito;
+	
+	public String getHistoria() {
+		return historia;
 	}
 
-	public void setPre_requisito(String pre_requisito) {
-		this.pre_requisito = pre_requisito;
+	public void setHistoria(String historia) {
+		this.historia = historia;
+	}
+
+	public String getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(String dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+
+	public String getDataInicio() {
+		return dataInicio;
+	}
+
+	public void setDataInicio(String dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+	public String getDataFim() {
+		return dataFim;
+	}
+
+	public void setDataFim(String dataFim) {
+		this.dataFim = dataFim;
 	}
 
 	public Sistema getSistema() {

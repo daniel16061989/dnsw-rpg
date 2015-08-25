@@ -1,29 +1,3 @@
-<h4 class="page-header">Sistema RPG</h4>
-
-<div mensagem-directive></div>
-  
-<form name="formSistema">
-	<input type="hidden" ng-model="sistema.idSistema">
-	<input type="text" class="form-control" ng-model="sistema.nome" placeholder="Nome do Sistema">
-  	<input type="text" class="form-control" ng-model="sistema.descricao" placeholder="Descricao do Sistema">
-  	<label class="checkbox-inline">
-  	<input type="checkbox" ng-model="sistema.flagAtivo"> Ativo
-  	</label>
-  	
-	<hr />
-	
-	<div class="row">
-	  <div class="col-md-12">
-	  	<button type="button" class="btn btn-primary" ng-click="salvarSistema()">Salvar</button>
-	  	<a class="btn btn-success" ng-click="buscarSistema()">Pesquisar</a>
-		<a class="btn btn-default" ng-click="limparSistema()">Limpar</a>
-	  </div>
-	</div>
-
-</form>
-  
-<hr />
-	
 <div class="table-responsive col-md-12">
 
 	<table class="table table-striped" cellspacing="0" cellpadding="0">

@@ -28,6 +28,9 @@ public class Usuario implements Serializable{
 	@Column(name="email")
 	private String email;
 	
+	@Column(name="apelido")
+	private String apelido;
+	
 	@Column(name="status", nullable=false)
 	private Character status;
 	
@@ -37,8 +40,25 @@ public class Usuario implements Serializable{
 	@Column(name="data_alteracao", nullable=true)
 	private Date dataAlteracao;
 	
+	@Column(name = "campanhas_jogadas")
+	private Integer campanhasJogadas;
+	
+	@Column(name = "campanhas_mestradas")
+	private Integer campanhasMestradas;
+	
+	@Column(name = "status_jogador")
+	private Character statusJogador;
+	
+	@Column(name = "status_mestre")
+	private Character statusMestre;
+	
 	@Column(name = "flag_ativo")
 	private Boolean flagAtivo;
+	
+	public static final Character STATUS_OTIMO = 'O';
+	public static final Character STATUS_BOM = 'B';
+	public static final Character STATUS_REGULAR = 'R';
+	public static final Character STATUS_RUIM = 'Z';
 	
 	public Integer getIdUsuario() {
 		return idUsuario;
@@ -94,6 +114,46 @@ public class Usuario implements Serializable{
 
 	public void setDataAlteracao(Date dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
+	}
+	
+	public String getApelido() {
+		return apelido;
+	}
+
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
+
+	public Integer getCampanhasJogadas() {
+		return campanhasJogadas;
+	}
+
+	public void setCampanhasJogadas(Integer campanhasJogadas) {
+		this.campanhasJogadas = campanhasJogadas;
+	}
+
+	public Integer getCampanhasMestradas() {
+		return campanhasMestradas;
+	}
+
+	public void setCampanhasMestradas(Integer campanhasMestradas) {
+		this.campanhasMestradas = campanhasMestradas;
+	}
+
+	public Character getStatusMestre() {
+		return statusMestre;
+	}
+
+	public void setStatusMestre(Character statusMestre) {
+		this.statusMestre = statusMestre;
+	}
+
+	public Character getStatusJogador() {
+		return statusJogador;
+	}
+
+	public void setStatusJogador(Character statusJogador) {
+		this.statusJogador = statusJogador;
 	}
 
 	public Boolean getFlagAtivo() {
