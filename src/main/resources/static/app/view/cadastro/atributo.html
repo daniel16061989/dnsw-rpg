@@ -1,0 +1,58 @@
+<h4 class="page-header">Atributo RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formAtributo">
+	<input type="hidden" ng-model="atributo.idAtributo">
+	<input type="text" class="form-control" ng-model="atributo.nome" placeholder="Nome do Atributo">
+  	<input type="text" class="form-control" ng-model="atributo.descricao" placeholder="Descricao do Atributo">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="atributo.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarAtributo()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarAtributo()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparAtributo()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="atributo in atributos">
+				<td>{{atributo.idAtributo}}</td>
+				<td>{{atributo.nome}}</td>
+				<td>{{atributo.descricao}}</td>
+				<td>{{atributo.sistema.nome}}</td>
+				<td>{{atributo.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarAtributo(atributo)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarAtributo(atributo)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

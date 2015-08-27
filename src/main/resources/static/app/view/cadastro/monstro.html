@@ -1,0 +1,58 @@
+<h4 class="page-header">Monstro RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formMonstro">
+	<input type="hidden" ng-model="monstro.idMonstro">
+	<input type="text" class="form-control" ng-model="monstro.nome" placeholder="Nome do Monstro">
+  	<input type="text" class="form-control" ng-model="monstro.descricao" placeholder="Descricao do Monstro">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="monstro.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarMonstro()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarMonstro()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparMonstro()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="monstro in monstros">
+				<td>{{monstro.idMonstro}}</td>
+				<td>{{monstro.nome}}</td>
+				<td>{{monstro.descricao}}</td>
+				<td>{{monstro.sistema.nome}}</td>
+				<td>{{monstro.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarMonstro(monstro)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarMonstro(monstro)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

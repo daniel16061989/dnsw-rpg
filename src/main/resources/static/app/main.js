@@ -19,12 +19,76 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
                 controller: 'EscolherFichaBatalhaController',
                 templateUrl: 'app/view/escolherFichaBatalha.html'
             })
+            .when('/cadastro-usuario', {
+                controller: 'UsuarioCadastroController',
+                templateUrl: 'app/view/cadastroUsuario.html'
+            })
             
             
             
+            .when('/atributo', {
+                controller: 'AtributoController',
+                templateUrl: 'app/view/cadastro/atributo.html'
+            })
+            .when('/circulo-magico', {
+                controller: 'CirculoMagicoController',
+                templateUrl: 'app/view/cadastro/circuloMagico.html'
+            })
+            .when('/classe', {
+                controller: 'ClasseController',
+                templateUrl: 'app/view/cadastro/classe.html'
+            })
+            .when('/combate', {
+                controller: 'CombateController',
+                templateUrl: 'app/view/cadastro/combate.html'
+            })
+            .when('/desvantagem', {
+                controller: 'DesvantagemController',
+                templateUrl: 'app/view/cadastro/desvantagem.html'
+            })
+            .when('/efeito', {
+                controller: 'EfeitoController',
+                templateUrl: 'app/view/cadastro/efeito.html'
+            })
+            .when('/item', {
+                controller: 'ItemController',
+                templateUrl: 'app/view/cadastro/item.html'
+            })
+            .when('/magia', {
+                controller: 'MagiaController',
+                templateUrl: 'app/view/cadastro/magia.html'
+            })
+            .when('/monstro', {
+                controller: 'MonstroController',
+                templateUrl: 'app/view/cadastro/monstro.html'
+            })
+            .when('/pericia', {
+                controller: 'PericiaController',
+                templateUrl: 'app/view/cadastro/pericia.html'
+            })
+            .when('/profissao', {
+                controller: 'ProfissaoController',
+                templateUrl: 'app/view/cadastro/profissao.html'
+            })
+            .when('/raca', {
+                controller: 'RacaController',
+                templateUrl: 'app/view/cadastro/raca.html'
+            })
+            .when('/regra-sistema', {
+                controller: 'RegraSistemaController',
+                templateUrl: 'app/view/cadastro/regraSistema.html'
+            })
             .when('/sistema', {
                 controller: 'SistemaController',
                 templateUrl: 'app/view/cadastro/sistema.html'
+            })
+            .when('/usuario', {
+                controller: 'UsuarioController',
+                templateUrl: 'app/view/cadastro/usuario.html'
+            })
+            .when('/vantagem', {
+                controller: 'VantagemController',
+                templateUrl: 'app/view/cadastro/vantagem.html'
             })
 			.otherwise({
 				redirectTo: '/login'
@@ -40,4 +104,5 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
     	$scope.mensagem.danger = false;
     	$scope.mensagem.texto = '';
     	
+    	$rootScope.iniciaNavbar = false;
     });

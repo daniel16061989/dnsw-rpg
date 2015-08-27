@@ -1,0 +1,23 @@
+<h4 class="page-header">Usuario RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formUsuario">
+	<input type="hidden" ng-model="usuario.idUsuario">
+	<input type="text" class="form-control" ng-model="usuario.nome" placeholder="Nome Completo">
+	<input type="text" class="form-control" ng-model="usuario.email" placeholder="Email">
+	<input type="text" class="form-control" ng-model="usuario.apelido" placeholder="Apelido">
+	<input type="text" class="form-control" ng-model="usuario.login" placeholder="login">
+	<input type="password" class="form-control" ng-model="usuario.senha" placeholder="Senha">
+	<input type="password" class="form-control" ng-model="senha" placeholder="Re-senha">
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="voltar()">Voltar</button>
+	  	<button type="button" class="btn btn-success" ng-click="salvarUsuario()">Salvar</button>
+	  </div>
+	</div>
+
+</form>

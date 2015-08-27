@@ -1,0 +1,58 @@
+<h4 class="page-header">Magia RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formMagia">
+	<input type="hidden" ng-model="magia.idMagia">
+	<input type="text" class="form-control" ng-model="magia.nome" placeholder="Nome do Magia">
+  	<input type="text" class="form-control" ng-model="magia.descricao" placeholder="Descricao do Magia">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="magia.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarMagia()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarMagia()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparMagia()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="magia in magias">
+				<td>{{magia.idMagia}}</td>
+				<td>{{magia.nome}}</td>
+				<td>{{magia.descricao}}</td>
+				<td>{{magia.sistema.nome}}</td>
+				<td>{{magia.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarMagia(magia)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarMagia(magia)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

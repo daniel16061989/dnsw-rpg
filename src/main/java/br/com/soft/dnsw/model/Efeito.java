@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -44,6 +46,13 @@ public class Efeito implements Serializable {
 	
 	@Column(name = "quantidade")
 	private Integer quantidade;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_sistema")
+	private Sistema sistema;
+	
+	@Column(name = "flag_ativo")
+	private Boolean flagAtivo;
 	
 	public static final Character FOCO_INDIVIDUAL = 'E';
 	public static final Character FOCO_INIMIGO = 'I';
@@ -127,6 +136,22 @@ public class Efeito implements Serializable {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public Sistema getSistema() {
+		return sistema;
+	}
+
+	public void setSistema(Sistema sistema) {
+		this.sistema = sistema;
+	}
+
+	public Boolean getFlagAtivo() {
+		return flagAtivo;
+	}
+
+	public void setFlagAtivo(Boolean flagAtivo) {
+		this.flagAtivo = flagAtivo;
 	}
 
 }

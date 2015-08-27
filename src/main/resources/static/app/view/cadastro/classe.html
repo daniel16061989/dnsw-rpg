@@ -1,0 +1,58 @@
+<h4 class="page-header">Classe RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formClasse">
+	<input type="hidden" ng-model="classe.idClasse">
+	<input type="text" class="form-control" ng-model="classe.nome" placeholder="Nome do Classe">
+  	<input type="text" class="form-control" ng-model="classe.descricao" placeholder="Descricao do Classe">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="classe.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarClasse()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarClasse()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparClasse()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="classe in classes">
+				<td>{{classe.idClasse}}</td>
+				<td>{{classe.nome}}</td>
+				<td>{{classe.descricao}}</td>
+				<td>{{classe.sistema.nome}}</td>
+				<td>{{classe.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarClasse(classe)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarClasse(classe)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

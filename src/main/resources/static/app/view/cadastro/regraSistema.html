@@ -1,0 +1,58 @@
+<h4 class="page-header">RegraSistema RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formRegraSistema">
+	<input type="hidden" ng-model="regraSistema.idRegraSistema">
+	<input type="text" class="form-control" ng-model="regraSistema.nome" placeholder="Nome do RegraSistema">
+  	<input type="text" class="form-control" ng-model="regraSistema.descricao" placeholder="Descricao do RegraSistema">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="regraSistema.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarRegraSistema()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarRegraSistema()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparRegraSistema()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="regraSistema in regraSistemas">
+				<td>{{regraSistema.idRegraSistema}}</td>
+				<td>{{regraSistema.nome}}</td>
+				<td>{{regraSistema.descricao}}</td>
+				<td>{{regraSistema.sistema.nome}}</td>
+				<td>{{regraSistema.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarRegraSistema(regraSistema)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarRegraSistema(regraSistema)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

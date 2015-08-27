@@ -9,6 +9,10 @@ angular.module('UserApp')
     		buscarSistemas();
     	}
     	
+    	$scope.changeLanguage = function (langKey) {
+    		$translate.use(langKey);
+    	};
+    	
     	$scope.batalha = function(sistema) {
     		$scope.sistemaBatalha = sistema;
     		

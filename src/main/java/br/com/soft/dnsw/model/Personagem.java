@@ -42,6 +42,10 @@ public class Personagem implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "id_campanha")
 	private Campanha campanha;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_sistema")
+	private Sistema sistema;
 
 	public Integer getIdPersonagem() {
 		return idPersonagem;
@@ -105,6 +109,14 @@ public class Personagem implements Serializable {
 
 	public void setCampanha(Campanha campanha) {
 		this.campanha = campanha;
+	}
+
+	public Sistema getSistema() {
+		return sistema;
+	}
+
+	public void setSistema(Sistema sistema) {
+		this.sistema = sistema;
 	}
 
 }

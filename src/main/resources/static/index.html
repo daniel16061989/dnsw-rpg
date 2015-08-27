@@ -15,7 +15,7 @@
 </head>
 
 <body ng-controller="MainController">
-	<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarController">
+	<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarController" ng-show="iniciaNavbar">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -32,8 +32,22 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'REGISTER' | translate}}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="#!/atributo/">{{'ATTRIBUTE' | translate}}</a></li>
+							<li><a href="#!/circulo-magico/">{{'MAGIC_CIRCLE' | translate}}</a></li>
+							<li><a href="#!/classe/">{{'CLASS' | translate}}</a></li>
+							<li><a href="#!/combate/">{{'BATTLE' | translate}}</a></li>
+							<li><a href="#!/desvantagem/">{{'DRAWBACK' | translate}}</a></li>
+							<li><a href="#!/efeito/">{{'EFFECT' | translate}}</a></li>
+							<li><a href="#!/item/">{{'ITEM' | translate}}</a></li>
+							<li><a href="#!/magia/">{{'MAGIC' | translate}}</a></li>
+							<li><a href="#!/monstro/">{{'MONSTER' | translate}}</a></li>
+							<li><a href="#!/regraSistema/">{{'RULE_SYSTEM' | translate}}</a></li>
+							<li><a href="#!/pericia/">{{'SKILL' | translate}}</a></li>
+							<li><a href="#!/profissao/">{{'PROFESSION' | translate}}</a></li>
+							<li><a href="#!/usuario/">{{'USER' | translate}}</a></li>
+							<li><a href="#!/raca/">{{'BREED' | translate}}</a></li>
 							<li><a href="#!/sistema/">{{'SYSTEM' | translate}}</a></li>
-							<li><a href="#!/atributo/">Atributos</a></li>
+							<li><a href="#!/vantagem/">{{'ADVANTAGE' | translate}}</a></li>
 						</ul></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'CAMPAIGN' | translate}}<span class="caret"></span></a>
@@ -86,6 +100,8 @@
 	<script src="app/mensagem/mensagemDirective.js"></script>
 
 	<script src="app/navbar/navbarController.js"></script>
+	
+	<script src="app/validacao/validacaoService.js"></script>
 
 	<script src="app/campanha/novaCampanhaController.js"></script>
 	<script src="app/campanha/campanhaService.js"></script>
@@ -93,9 +109,57 @@
 	<script src="app/personagem/escolherFichaBatalhaController.js"></script>
 	<script src="app/personagem/personagemService.js"></script>
 	
+	<script src="app/cadastroUsuario/usuarioCadastroController.js"></script>
+	<script src="app/cadastroUsuario/usuarioCadastroService.js"></script>
+	
 	<!-- CADASTRO -->
+	<script src="app/cadastro/atributo/atributoController.js"></script>
+	<script src="app/cadastro/atributo/atributoService.js"></script>
+	
+	<script src="app/cadastro/circuloMagico/circuloMagicoController.js"></script>
+	<script src="app/cadastro/circuloMagico/circuloMagicoService.js"></script>
+	
+	<script src="app/cadastro/classe/classeController.js"></script>
+	<script src="app/cadastro/classe/classeService.js"></script>
+	
+	<script src="app/cadastro/combate/combateController.js"></script>
+	<script src="app/cadastro/combate/combateService.js"></script>
+	
+	<script src="app/cadastro/desvantagem/desvantagemController.js"></script>
+	<script src="app/cadastro/desvantagem/desvantagemService.js"></script>
+	
+	<script src="app/cadastro/efeito/efeitoController.js"></script>
+	<script src="app/cadastro/efeito/efeitoService.js"></script>
+	
+	<script src="app/cadastro/item/itemController.js"></script>
+	<script src="app/cadastro/item/itemService.js"></script>
+	
+	<script src="app/cadastro/magia/magiaController.js"></script>
+	<script src="app/cadastro/magia/magiaService.js"></script>
+	
+	<script src="app/cadastro/monstro/monstroController.js"></script>
+	<script src="app/cadastro/monstro/monstroService.js"></script>
+	
+	<script src="app/cadastro/pericia/periciaController.js"></script>
+	<script src="app/cadastro/pericia/periciaService.js"></script>
+	
+	<script src="app/cadastro/profissao/profissaoController.js"></script>
+	<script src="app/cadastro/profissao/profissaoService.js"></script>
+	
+	<script src="app/cadastro/raca/racaController.js"></script>
+	<script src="app/cadastro/raca/racaService.js"></script>
+	
+	<script src="app/cadastro/regraSistema/regraSistemaController.js"></script>
+	<script src="app/cadastro/regraSistema/regraSistemaService.js"></script>
+	
 	<script src="app/cadastro/sistema/sistemaController.js"></script>
 	<script src="app/cadastro/sistema/sistemaService.js"></script>
+	
+	<script src="app/cadastro/usuario/usuarioController.js"></script>
+	<script src="app/cadastro/usuario/usuarioService.js"></script>
+	
+	<script src="app/cadastro/vantagem/vantagemController.js"></script>
+	<script src="app/cadastro/vantagem/vantagemService.js"></script>
 
 </body>
 </html>

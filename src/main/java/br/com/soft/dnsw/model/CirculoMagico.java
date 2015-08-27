@@ -26,9 +26,6 @@ public class CirculoMagico implements  Serializable {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@Column(name = "pre_requisito")
-	private String pre_requisito;
-	
 	@ManyToOne
 	@JoinColumn(name = "id_sistema")
 	private Sistema sistema;
@@ -58,14 +55,6 @@ public class CirculoMagico implements  Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public String getPre_requisito() {
-		return pre_requisito;
-	}
-
-	public void setPre_requisito(String pre_requisito) {
-		this.pre_requisito = pre_requisito;
 	}
 
 	public Sistema getSistema() {

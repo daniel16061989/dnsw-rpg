@@ -1,0 +1,52 @@
+<h4 class="page-header">Usuario RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formUsuario">
+	<input type="hidden" ng-model="usuario.idUsuario">
+	<input type="text" class="form-control" ng-model="usuario.nome" placeholder="Nome do Usuario">
+	<input type="text" class="form-control" ng-model="usuario.login" placeholder="Nome do Usuario">
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="usuario.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarUsuario()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarUsuario()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparUsuario()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="usuario in usuarios">
+				<td>{{usuario.idUsuario}}</td>
+				<td>{{usuario.nome}}</td>
+				<td>{{usuario.descricao}}</td>
+				<td>{{usuario.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarUsuario(usuario)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarUsuario(usuario)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

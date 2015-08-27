@@ -1,0 +1,58 @@
+<h4 class="page-header">Vantagem RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formVantagem">
+	<input type="hidden" ng-model="vantagem.idVantagem">
+	<input type="text" class="form-control" ng-model="vantagem.nome" placeholder="Nome do Vantagem">
+  	<input type="text" class="form-control" ng-model="vantagem.descricao" placeholder="Descricao do Vantagem">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="vantagem.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarVantagem()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarVantagem()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparVantagem()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="vantagem in vantagems">
+				<td>{{vantagem.idVantagem}}</td>
+				<td>{{vantagem.nome}}</td>
+				<td>{{vantagem.descricao}}</td>
+				<td>{{vantagem.sistema.nome}}</td>
+				<td>{{vantagem.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarVantagem(vantagem)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarVantagem(vantagem)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

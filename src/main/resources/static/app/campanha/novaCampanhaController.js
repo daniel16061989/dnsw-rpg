@@ -30,6 +30,7 @@ angular.module('UserApp')
     		$scope.mensagem.danger = false;
     		
     		$scope.campanha = {};
+    		$scope.campanha.sistema = {};
         	
         	buscarSistemas();
     	}

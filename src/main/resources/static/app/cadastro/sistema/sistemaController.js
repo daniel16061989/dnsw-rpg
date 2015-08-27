@@ -1,5 +1,6 @@
 angular.module('UserApp')
-    .controller('SistemaController', function ($scope, $rootScope, $location, $cookieStore, SistemaService) {
+    .controller('SistemaController', 
+    		function ($scope, $rootScope, $location, $cookieStore, SistemaService, ValidacaoService) {
     	
     	init();
     	

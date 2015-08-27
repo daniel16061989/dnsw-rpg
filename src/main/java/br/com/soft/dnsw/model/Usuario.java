@@ -1,7 +1,6 @@
 package br.com.soft.dnsw.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,10 +18,13 @@ public class Usuario implements Serializable{
 	@Column(name="id_usuario", insertable=false, updatable=false)
 	private Integer idUsuario;
 	
-	@Column(name="login", nullable=false)
+	@Column(name="nome")
+	private String nome;
+	
+	@Column(name="login")
 	private String login;
 	
-	@Column(name="senha", nullable=false)
+	@Column(name="senha")
 	private String senha;
 	
 	@Column(name="email")
@@ -31,20 +33,14 @@ public class Usuario implements Serializable{
 	@Column(name="apelido")
 	private String apelido;
 	
-	@Column(name="status", nullable=false)
+	@Column(name="status")
 	private Character status;
 	
-	@Column(name="data_criacao", nullable=false)
-	private Date dataCriacao;
+	@Column(name="data_criacao")
+	private String dataCriacao;
 	
-	@Column(name="data_alteracao", nullable=true)
-	private Date dataAlteracao;
-	
-	@Column(name = "campanhas_jogadas")
-	private Integer campanhasJogadas;
-	
-	@Column(name = "campanhas_mestradas")
-	private Integer campanhasMestradas;
+	@Column(name="data_alteracao")
+	private String dataAlteracao;
 	
 	@Column(name = "status_jogador")
 	private Character statusJogador;
@@ -59,6 +55,7 @@ public class Usuario implements Serializable{
 	public static final Character STATUS_BOM = 'B';
 	public static final Character STATUS_REGULAR = 'R';
 	public static final Character STATUS_RUIM = 'Z';
+	public static final Character STATUS_INICIANTE = 'I';
 	
 	public Integer getIdUsuario() {
 		return idUsuario;
@@ -66,6 +63,14 @@ public class Usuario implements Serializable{
 	
 	public void setIdUsuario(Integer idUsuario) {
 		this.idUsuario = idUsuario;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getLogin() {
@@ -99,45 +104,29 @@ public class Usuario implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public Date getDataCriacao() {
+	
+	public String getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(String dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public Date getDataAlteracao() {
+	public String getDataAlteracao() {
 		return dataAlteracao;
 	}
 
-	public void setDataAlteracao(Date dataAlteracao) {
+	public void setDataAlteracao(String dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
 	}
-	
+
 	public String getApelido() {
 		return apelido;
 	}
 
 	public void setApelido(String apelido) {
 		this.apelido = apelido;
-	}
-
-	public Integer getCampanhasJogadas() {
-		return campanhasJogadas;
-	}
-
-	public void setCampanhasJogadas(Integer campanhasJogadas) {
-		this.campanhasJogadas = campanhasJogadas;
-	}
-
-	public Integer getCampanhasMestradas() {
-		return campanhasMestradas;
-	}
-
-	public void setCampanhasMestradas(Integer campanhasMestradas) {
-		this.campanhasMestradas = campanhasMestradas;
 	}
 
 	public Character getStatusMestre() {

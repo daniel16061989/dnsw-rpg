@@ -24,4 +24,9 @@ angular.module('UserApp')
 	    		);
 //    		}
 		}
+    	
+    	$scope.registrar = function() {
+    		console.log(234);
+    		$location.path("/cadastro-usuario");
+    	}
     });

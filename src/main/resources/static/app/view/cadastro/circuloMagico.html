@@ -1,0 +1,58 @@
+<h4 class="page-header">CirculoMagico RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formCirculoMagico">
+	<input type="hidden" ng-model="circuloMagico.idCirculoMagico">
+	<input type="text" class="form-control" ng-model="circuloMagico.nome" placeholder="Nome do CirculoMagico">
+  	<input type="text" class="form-control" ng-model="circuloMagico.descricao" placeholder="Descricao do CirculoMagico">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="circuloMagico.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarCirculoMagico()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarCirculoMagico()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparCirculoMagico()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="circuloMagico in circuloMagicos">
+				<td>{{circuloMagico.idCirculoMagico}}</td>
+				<td>{{circuloMagico.nome}}</td>
+				<td>{{circuloMagico.descricao}}</td>
+				<td>{{circuloMagico.sistema.nome}}</td>
+				<td>{{circuloMagico.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarCirculoMagico(circuloMagico)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarCirculoMagico(circuloMagico)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,58 @@
+<h4 class="page-header">Pericia RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formPericia">
+	<input type="hidden" ng-model="pericia.idPericia">
+	<input type="text" class="form-control" ng-model="pericia.nome" placeholder="Nome do Pericia">
+  	<input type="text" class="form-control" ng-model="pericia.descricao" placeholder="Descricao do Pericia">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="pericia.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarPericia()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarPericia()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparPericia()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="pericia in pericias">
+				<td>{{pericia.idPericia}}</td>
+				<td>{{pericia.nome}}</td>
+				<td>{{pericia.descricao}}</td>
+				<td>{{pericia.sistema.nome}}</td>
+				<td>{{pericia.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarPericia(pericia)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarPericia(pericia)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

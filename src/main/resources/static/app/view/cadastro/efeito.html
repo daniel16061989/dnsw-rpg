@@ -1,0 +1,58 @@
+<h4 class="page-header">Efeito RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formEfeito">
+	<input type="hidden" ng-model="efeito.idEfeito">
+	<input type="text" class="form-control" ng-model="efeito.nome" placeholder="Nome do Efeito">
+  	<input type="text" class="form-control" ng-model="efeito.descricao" placeholder="Descricao do Efeito">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="efeito.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarEfeito()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarEfeito()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparEfeito()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="efeito in efeitos">
+				<td>{{efeito.idEfeito}}</td>
+				<td>{{efeito.nome}}</td>
+				<td>{{efeito.descricao}}</td>
+				<td>{{efeito.sistema.nome}}</td>
+				<td>{{efeito.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarEfeito(efeito)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarEfeito(efeito)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

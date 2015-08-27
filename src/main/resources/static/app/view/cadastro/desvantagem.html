@@ -1,0 +1,58 @@
+<h4 class="page-header">Desvantagem RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formDesvantagem">
+	<input type="hidden" ng-model="desvantagem.idDesvantagem">
+	<input type="text" class="form-control" ng-model="desvantagem.nome" placeholder="Nome do Desvantagem">
+  	<input type="text" class="form-control" ng-model="desvantagem.descricao" placeholder="Descricao do Desvantagem">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="desvantagem.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarDesvantagem()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarDesvantagem()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparDesvantagem()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="desvantagem in desvantagems">
+				<td>{{desvantagem.idDesvantagem}}</td>
+				<td>{{desvantagem.nome}}</td>
+				<td>{{desvantagem.descricao}}</td>
+				<td>{{desvantagem.sistema.nome}}</td>
+				<td>{{desvantagem.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarDesvantagem(desvantagem)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarDesvantagem(desvantagem)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

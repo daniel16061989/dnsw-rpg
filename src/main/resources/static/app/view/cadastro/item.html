@@ -1,0 +1,58 @@
+<h4 class="page-header">Item RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formItem">
+	<input type="hidden" ng-model="item.idItem">
+	<input type="text" class="form-control" ng-model="item.nome" placeholder="Nome do Item">
+  	<input type="text" class="form-control" ng-model="item.descricao" placeholder="Descricao do Item">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="item.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarItem()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarItem()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparItem()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items">
+				<td>{{item.idItem}}</td>
+				<td>{{item.nome}}</td>
+				<td>{{item.descricao}}</td>
+				<td>{{item.sistema.nome}}</td>
+				<td>{{item.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarItem(item)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarItem(item)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
