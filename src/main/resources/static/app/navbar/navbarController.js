@@ -15,8 +15,12 @@ angular.module('UserApp')
     	
     	$scope.batalha = function(sistema) {
     		$scope.sistemaBatalha = sistema;
-    		
     		$location.path("/escolher-ficha-batalha");
+    	}
+    	
+    	$scope.logout = function() {
+    		$cookieStore.remove('usuarioLogado');
+    		$location.path("/");
     	}
     	
     	function buscarSistemas() {

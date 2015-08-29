@@ -33,6 +33,7 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'REGISTER' | translate}}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#!/atributo/">{{'ATTRIBUTE' | translate}}</a></li>
+							<li><a href="#!/cabecalho-ficha/">{{'RECORD_HEADER' | translate}}</a></li>
 							<li><a href="#!/circulo-magico/">{{'MAGIC_CIRCLE' | translate}}</a></li>
 							<li><a href="#!/classe/">{{'CLASS' | translate}}</a></li>
 							<li><a href="#!/combate/">{{'BATTLE' | translate}}</a></li>
@@ -69,6 +70,7 @@
 							<li><a href="" ng-click="changeLanguage('en')" translate="EN">EN</a></li>
 						</ul>
 					</li>
+					<li class="active"><a href="" ng-click="logout()">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -115,6 +117,9 @@
 	<!-- CADASTRO -->
 	<script src="app/cadastro/atributo/atributoController.js"></script>
 	<script src="app/cadastro/atributo/atributoService.js"></script>
+	
+	<script src="app/cadastro/cabecalhoFicha/cabecalhoFichaController.js"></script>
+	<script src="app/cadastro/cabecalhoFicha/cabecalhoFichaService.js"></script>
 	
 	<script src="app/cadastro/circuloMagico/circuloMagicoController.js"></script>
 	<script src="app/cadastro/circuloMagico/circuloMagicoService.js"></script>

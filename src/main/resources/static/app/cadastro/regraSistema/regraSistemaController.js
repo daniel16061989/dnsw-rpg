@@ -34,7 +34,7 @@ angular.module('UserApp')
     	}
     	
     	$scope.buscarRegraSistema = function() {
-    		if(ValidacaoService.validaObjetoVazio($scope.atributo.sistema)) {
+    		if(ValidacaoService.validaObjetoVazio($scope.regraSistema.sistema)) {
     			$scope.mensagem.danger = true;
 				$scope.mensagem.texto = 'Selecione o sistema antes de realizar a busca';
     		} else {

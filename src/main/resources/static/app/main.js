@@ -23,12 +23,20 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
                 controller: 'UsuarioCadastroController',
                 templateUrl: 'app/view/cadastroUsuario.html'
             })
+            .when('/criar-personagem', {
+                controller: 'CriarPersonagemController',
+                templateUrl: 'app/view/criarPersonagem.html'
+            })
             
             
             
             .when('/atributo', {
                 controller: 'AtributoController',
                 templateUrl: 'app/view/cadastro/atributo.html'
+            })
+            .when('/cabecalho-ficha', {
+                controller: 'CabecalhoFichaController',
+                templateUrl: 'app/view/cadastro/cabecalhoFicha.html'
             })
             .when('/circulo-magico', {
                 controller: 'CirculoMagicoController',

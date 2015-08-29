@@ -1,24 +1,18 @@
 <div class="table-responsive col-md-12">
 
+	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="criarPersonagem()">Novo Personagem</button>
 	<table class="table table-striped" cellspacing="0" cellpadding="0">
 		<thead>
 			<tr>
-				<th>{{'ID' | translate}}</th>
 				<th>{{'NAME' | translate}}</th>
-				<th>{{'DESCRIPTION' | translate}}</th>
-				<th>{{'ACTIVE' | translate}}</th>
 				<th class="actions">{{'ACTIONS' | translate}}</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="sistema in sistemas">
-				<td>{{sistema.idSistema}}</td>
-				<td>{{sistema.nome}}</td>
-				<td>{{sistema.descricao}}</td>
-				<td>{{sistema.flagAtivo}}</td>
+			<tr ng-repeat="personagem in personagens">
+				<td>{{personagem.nome}}</td>
 				<td class="actions">
-					<a class="btn btn-warning btn-xs" ng-click="editarSistema(sistema)">{{'EDIT' | translate}}</a>
-					<a class="btn btn-danger btn-xs" ng-click="inativarSistema(sistema)">{{'INACTIVATE' | translate}}</a>
+					<a class="btn btn-warning btn-xs" ng-click="escolherFicha(personagem)">{{'EDIT' | translate}}</a>
 				</td>
 			</tr>
 		</tbody>

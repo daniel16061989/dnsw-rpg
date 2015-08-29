@@ -1,0 +1,58 @@
+<h4 class="page-header">CabecalhoFicha RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formCabecalhoFicha">
+	<input type="hidden" ng-model="cabecalhoFicha.idCabecalhoFicha">
+	<input type="text" class="form-control" ng-model="cabecalhoFicha.nome" placeholder="Nome do CabecalhoFicha">
+  	<input type="text" class="form-control" ng-model="cabecalhoFicha.descricao" placeholder="Descricao do CabecalhoFicha">
+	<select class="form-control">
+	    <option>Selecione o Sistema de RPG</option>
+	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="cabecalhoFicha.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarCabecalhoFicha()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarCabecalhoFicha()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparCabecalhoFicha()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="cabecalhoFicha in cabecalhoFichas">
+				<td>{{cabecalhoFicha.idCabecalhoFicha}}</td>
+				<td>{{cabecalhoFicha.nome}}</td>
+				<td>{{cabecalhoFicha.descricao}}</td>
+				<td>{{cabecalhoFicha.sistema.nome}}</td>
+				<td>{{cabecalhoFicha.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarCabecalhoFicha(cabecalhoFicha)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarCabecalhoFicha(cabecalhoFicha)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
