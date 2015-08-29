@@ -6,9 +6,8 @@
 	<input type="hidden" ng-model="circuloMagico.idCirculoMagico">
 	<input type="text" class="form-control" ng-model="circuloMagico.nome" placeholder="Nome do CirculoMagico">
   	<input type="text" class="form-control" ng-model="circuloMagico.descricao" placeholder="Descricao do CirculoMagico">
-	<select class="form-control">
-	    <option>Selecione o Sistema de RPG</option>
-	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+	<select class="form-control" ng-model="atributo.sistema.idSistema">
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">
   		<input type="checkbox" ng-model="circuloMagico.flagAtivo"> Ativo

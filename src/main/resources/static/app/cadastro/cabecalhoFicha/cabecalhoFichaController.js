@@ -8,10 +8,6 @@ angular.module('UserApp')
     		$scope.cabecalhoFicha = cabecalhoFicha;
     	}
     	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.cabecalhoFicha.sistema = sistema;
-    	}
-    	
     	$scope.limparCabecalhoFicha = function() {
     		init();
     	}

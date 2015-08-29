@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarVantagem = function(vantagem) {
     		$scope.vantagem = vantagem;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.vantagem.sistema = sistema;
-    	}
-    	
+
     	$scope.limparVantagem = function() {
     		init();
     	}

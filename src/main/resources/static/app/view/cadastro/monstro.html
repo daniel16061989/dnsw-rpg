@@ -7,8 +7,7 @@
 	<input type="text" class="form-control" ng-model="monstro.nome" placeholder="Nome do Monstro">
   	<input type="text" class="form-control" ng-model="monstro.descricao" placeholder="Descricao do Monstro">
 	<select class="form-control">
-	    <option>Selecione o Sistema de RPG</option>
-	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">
   		<input type="checkbox" ng-model="monstro.flagAtivo"> Ativo

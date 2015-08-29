@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarRaca = function(raca) {
     		$scope.raca = raca;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.raca.sistema = sistema;
-    	}
-    	
+
     	$scope.limparRaca = function() {
     		init();
     	}

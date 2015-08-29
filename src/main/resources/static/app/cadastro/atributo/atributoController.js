@@ -8,10 +8,6 @@ angular.module('UserApp')
     		$scope.atributo = atributo;
     	}
     	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.atributo.sistema = sistema;
-    	}
-    	
     	$scope.limparAtributo = function() {
     		init();
     	}

@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarEfeito = function(efeito) {
     		$scope.efeito = efeito;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.efeito.sistema = sistema;
-    	}
-    	
+   	
     	$scope.limparEfeito = function() {
     		init();
     	}

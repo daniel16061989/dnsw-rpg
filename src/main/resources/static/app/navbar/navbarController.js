@@ -14,11 +14,12 @@ angular.module('UserApp')
     	};
     	
     	$scope.batalha = function(sistema) {
-    		$scope.sistemaBatalha = sistema;
+    		$cookieStore.put('sistemaBatalha',sistema);
     		$location.path("/escolher-ficha-batalha");
     	}
     	
     	$scope.logout = function() {
+    		$rootScope.iniciaNavbar = false;
     		$cookieStore.remove('usuarioLogado');
     		$location.path("/");
     	}

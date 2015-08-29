@@ -8,10 +8,6 @@ angular.module('UserApp')
     		$scope.circuloMagico = circuloMagico;
     	}
     	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.circuloMagico.sistema = sistema;
-    	}
-    	
     	$scope.limparCirculoMagico = function() {
     		init();
     	}

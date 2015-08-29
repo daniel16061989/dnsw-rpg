@@ -7,8 +7,7 @@
 	<input type="text" class="form-control" ng-model="raca.nome" placeholder="Nome do Raca">
   	<input type="text" class="form-control" ng-model="raca.descricao" placeholder="Descricao do Raca">
 	<select class="form-control">
-	    <option>Selecione o Sistema de RPG</option>
-	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">
   		<input type="checkbox" ng-model="raca.flagAtivo"> Ativo

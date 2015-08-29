@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarClasse = function(classe) {
     		$scope.classe = classe;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.classe.sistema = sistema;
-    	}
-    	
+       	
     	$scope.limparClasse = function() {
     		init();
     	}

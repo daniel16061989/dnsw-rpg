@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarProfissao = function(profissao) {
     		$scope.profissao = profissao;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.profissao.sistema = sistema;
-    	}
-    	
+
     	$scope.limparProfissao = function() {
     		init();
     	}

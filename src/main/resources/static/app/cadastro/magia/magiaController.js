@@ -8,11 +8,7 @@ angular.module('UserApp')
     		$scope.magia = magia;
     	}
     	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.magia.sistema = sistema;
-    	}
-    	
-    	$scope.limparMagia = function() {
+      	$scope.limparMagia = function() {
     		init();
     	}
     	

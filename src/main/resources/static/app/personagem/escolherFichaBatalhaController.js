@@ -23,7 +23,7 @@ angular.module('UserApp')
     	
     	function buscarPersonagens() {
     		var usuario = $cookieStore.get('usuarioLogado');
-    		var sistema = $scope.sistemaBatalha;
+    		var sistema = $cookieStore.get('sistemaBatalha');
     		
     		PersonagemService.buscarPersonagem(
 	    		{usuario : usuario, sistema : sistema},

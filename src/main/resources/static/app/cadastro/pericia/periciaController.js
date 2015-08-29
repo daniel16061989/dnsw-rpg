@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarPericia = function(pericia) {
     		$scope.pericia = pericia;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.pericia.sistema = sistema;
-    	}
-    	
+
     	$scope.limparPericia = function() {
     		init();
     	}

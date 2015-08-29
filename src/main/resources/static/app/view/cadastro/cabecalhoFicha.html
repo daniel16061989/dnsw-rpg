@@ -6,9 +6,8 @@
 	<input type="hidden" ng-model="cabecalhoFicha.idCabecalhoFicha">
 	<input type="text" class="form-control" ng-model="cabecalhoFicha.nome" placeholder="Nome do CabecalhoFicha">
   	<input type="text" class="form-control" ng-model="cabecalhoFicha.descricao" placeholder="Descricao do CabecalhoFicha">
-	<select class="form-control">
-	    <option>Selecione o Sistema de RPG</option>
-	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+	<select class="form-control" ng-model="cabecalhoFicha.sistema.idSistema">
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">
   		<input type="checkbox" ng-model="cabecalhoFicha.flagAtivo"> Ativo

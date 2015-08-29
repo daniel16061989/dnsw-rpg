@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarUsuario = function(usuario) {
     		$scope.usuario = usuario;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.usuario.sistema = sistema;
-    	}
-    	
+  	
     	$scope.limparUsuario = function() {
     		init();
     	}

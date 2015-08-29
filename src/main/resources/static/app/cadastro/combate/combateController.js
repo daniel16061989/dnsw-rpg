@@ -8,10 +8,6 @@ angular.module('UserApp')
     		$scope.combate = combate;
     	}
     	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.combate.sistema = sistema;
-    	}
-    	
     	$scope.limparCombate = function() {
     		init();
     	}

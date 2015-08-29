@@ -7,8 +7,7 @@
 	<input type="text" class="form-control" ng-model="efeito.nome" placeholder="Nome do Efeito">
   	<input type="text" class="form-control" ng-model="efeito.descricao" placeholder="Descricao do Efeito">
 	<select class="form-control">
-	    <option>Selecione o Sistema de RPG</option>
-	    <option ng-repeat="sistema in sistemas" ng-click="adicionarSistema(sistema)">{{sistema.nome}}</option>
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">
   		<input type="checkbox" ng-model="efeito.flagAtivo"> Ativo

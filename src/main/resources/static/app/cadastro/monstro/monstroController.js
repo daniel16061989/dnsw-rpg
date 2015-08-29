@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarMonstro = function(monstro) {
     		$scope.monstro = monstro;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.monstro.sistema = sistema;
-    	}
-    	
+
     	$scope.limparMonstro = function() {
     		init();
     	}

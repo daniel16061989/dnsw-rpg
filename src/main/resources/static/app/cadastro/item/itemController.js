@@ -8,10 +8,6 @@ angular.module('UserApp')
     		$scope.item = item;
     	}
     	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.item.sistema = sistema;
-    	}
-    	
     	$scope.limparItem = function() {
     		init();
     	}

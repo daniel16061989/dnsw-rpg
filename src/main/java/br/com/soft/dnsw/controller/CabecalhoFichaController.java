@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.soft.dnsw.model.Classe;
-import br.com.soft.dnsw.repository.ClasseRepository;
-
 import com.google.gson.Gson;
+
+import br.com.soft.dnsw.model.CabecalhoFicha;
+import br.com.soft.dnsw.repository.CabecalhoFichaRepository;
 
 @RestController
 @RequestMapping("/cabecalho")
 public class CabecalhoFichaController {
 
 	@Autowired
-	private ClasseRepository classeRepository;
+	private CabecalhoFichaRepository cabecalhoFichaRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody List<Classe> findByExample(@PathParam(value = "classe") String classe) {
+	public @ResponseBody List<CabecalhoFicha> findByExample(@PathParam(value = "cabecalhoFicha") String cabecalhoFicha) {
 		Gson gson = new Gson();
-		Classe a = new Classe();
+		CabecalhoFicha a = new CabecalhoFicha();
 		
-		a = gson.fromJson(classe, Classe.class);
+		a = gson.fromJson(cabecalhoFicha, CabecalhoFicha.class);
 		
 		if(a == null) {
-			a = new Classe();
+			a = new CabecalhoFicha();
 		}
 		if(a.getNome() == null) {
 			a.setNome("");
@@ -43,28 +43,28 @@ public class CabecalhoFichaController {
 			a.setFlagAtivo(Boolean.TRUE);
 		}
 		
-		return classeRepository.findByExample(a.getNome(), 
+		return cabecalhoFichaRepository.findByExample(a.getNome(), 
 				a.getDescricao(), a.getSistema().getIdSistema(), a.getFlagAtivo());
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)
-	public @ResponseBody Classe update(@RequestBody String classe) {
+	public @ResponseBody CabecalhoFicha update(@RequestBody String cabecalhoFicha) {
 		Gson gson = new Gson();
-		Classe a = new Classe();
+		CabecalhoFicha a = new CabecalhoFicha();
 		
-		a = gson.fromJson(classe, Classe.class);
+		a = gson.fromJson(cabecalhoFicha, CabecalhoFicha.class);
 		
-		return classeRepository.save(a);
+		return cabecalhoFichaRepository.save(a);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody Classe save(@RequestBody String classe) {
+	public @ResponseBody CabecalhoFicha save(@RequestBody String cabecalhoFicha) {
 		Gson gson = new Gson();
-		Classe a = new Classe();
+		CabecalhoFicha a = new CabecalhoFicha();
 		
-		a = gson.fromJson(classe, Classe.class);
+		a = gson.fromJson(cabecalhoFicha, CabecalhoFicha.class);
 		
-		return classeRepository.save(a);
+		return cabecalhoFichaRepository.save(a);
 	}
 
 }

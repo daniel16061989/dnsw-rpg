@@ -7,11 +7,7 @@ angular.module('UserApp')
     	$scope.editarRegraSistema = function(regraSistema) {
     		$scope.regraSistema = regraSistema;
     	}
-    	
-    	$scope.adicionarSistema = function(sistema) {
-    		$scope.regraSistema.sistema = sistema;
-    	}
-    	
+
     	$scope.limparRegraSistema = function() {
     		init();
     	}
