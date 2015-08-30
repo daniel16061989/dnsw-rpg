@@ -1,6 +1,6 @@
 angular.module('UserApp')
     .controller('CriarPersonagemController', function ($scope, $rootScope, $location, $cookieStore, 
-    		PersonagemService, CabecalhoFichaService, AtributoService, VantagemService, DesvantagemService) {
+    		PersonagemService, CabecalhoFichaService, AtributoService, VantagemService, DesvantagemService, PericiaService) {
 //    		, PericiaService, MagiaService, 
 //    		VantagemService, DesvantagemService, RacaService, ClasseService, ProfissaoService) {
     	
@@ -11,6 +11,7 @@ angular.module('UserApp')
     		console.log($scope.atributoResult);
     		console.log($scope.vantagemResult);
     		console.log($scope.desvantagemResult);
+    		console.log($scope.periciaResult);
     	}
     	
     	function init() {
@@ -20,7 +21,7 @@ angular.module('UserApp')
     		$scope.atributos = [];
     		$scope.vantagens = [];
     		$scope.desvantagens = [];
-//    		$scope.pericias = [];
+    		$scope.pericias = [];
 //    		$scope.magias = [];
 //    		$scope.racas = [];
 //    		$scope.classes = [];
@@ -31,7 +32,7 @@ angular.module('UserApp')
     		console.log($scope.atributos);
     		buscarVantagens();
     		buscarDesvantagens();
-//    		buscarPericias();
+    		buscarPericias();
 //    		buscarMagias();
 //    		buscarRacas();
 //    		buscarClasses();
@@ -41,6 +42,7 @@ angular.module('UserApp')
     		$scope.atributoResult = {};
     		$scope.vantagemResult = {};
     		$scope.desvantagemResult = {};
+    		$scope.periciaResult = {};
     	}
     	
     	function buscarCabecalhoFicha() {
@@ -103,18 +105,21 @@ angular.module('UserApp')
 				});
     	}
     	
-//    	function buscarPericias() {
-//    		var sistema = $scope.sistemaBatalha;
-//    		
-//    		PericiaService.buscarPericia(
-//	    		{sistema : sistema},
-//				function(pericias){
-//	    			$scope.pericias = pericias;
-//					
-//				}, function(){
-//					console.log("Erro: buscar pericias");
-//				});
-//    	}
+    	function buscarPericias() {
+    		$scope.pericia = {};
+    		$scope.pericia.flagAtivo = true;
+    		$scope.pericia.sistema = $scope.sistema;
+    		
+    		PericiaService.buscarPericia(
+	    		{pericia : $scope.pericia},
+				function(pericias){
+	    			console.log(pericias);
+	    			$scope.pericias = pericias;
+					
+				}, function(){
+					console.log("Erro: buscar pericias");
+				});
+    	}
 //    	
 //    	function buscarMagias() {
 //    		var sistema = $scope.sistemaBatalha;

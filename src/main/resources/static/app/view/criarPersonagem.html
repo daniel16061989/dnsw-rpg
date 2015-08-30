@@ -5,6 +5,7 @@
 	  <li><a ng-click="tab=2" ng-class="{'active' : tab==2}">{{'ATTRIBUTE' | translate}}</a></li>
 	  <li><a ng-click="tab=3" ng-class="{'active' : tab==3}">{{'ADVANTAGE' | translate}}</a></li>
 	  <li><a ng-click="tab=4" ng-class="{'active' : tab==4}">{{'DRAWBACK' | translate}}</a></li>
+	  <li><a ng-click="tab=5" ng-class="{'active' : tab==5}">{{'SKILL' | translate}}</a></li>
 	</ul>
 	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="salvarFicha()">{{'SAVE' | translate}}</button>
 	<div class="tabs-container">
@@ -55,11 +56,16 @@
 						<td class="actions">
 					  		<input type="checkbox" ng-model="desvantagemResult[desvantagem.nome]">
 						</td>
-						<td>{{vantagem.nome}}</td>
-						<td>{{vantagem.descricao}}</td>
+						<td>{{desvantagem.nome}}</td>
+						<td>{{desvantagem.descricao}}</td>
 					</tr>
 				</tbody>
 			</table>
+		</div>
+		
+		<div class="tab-content" ng-show="tab == 5">
+			<h4>{{'SKILL' | translate}}</h4>
+			<input type="text" class="form-control" ng-repeat="pericia in pericias" placeholder="{{pericia.nome}}" ng-model="periciaResult[pericia.nome]">
 		</div>
 
 	</div>
