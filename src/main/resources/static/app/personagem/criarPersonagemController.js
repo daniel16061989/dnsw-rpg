@@ -1,39 +1,52 @@
 angular.module('UserApp')
     .controller('CriarPersonagemController', function ($scope, $rootScope, $location, $cookieStore, 
-    		PersonagemService, CabecalhoFichaService, AtributoService) {
+    		PersonagemService, CabecalhoFichaService, AtributoService, VantagemService, DesvantagemService) {
 //    		, PericiaService, MagiaService, 
 //    		VantagemService, DesvantagemService, RacaService, ClasseService, ProfissaoService) {
     	
     	init();
+    	
+    	$scope.salvarFicha = function() {
+    		console.log($scope.cabecalhoResult);
+    		console.log($scope.atributoResult);
+    		console.log($scope.vantagemResult);
+    		console.log($scope.desvantagemResult);
+    	}
     	
     	function init() {
     		$scope.sistema = $cookieStore.get('sistemaBatalha');
     		
     		$scope.cabecalhos = [];
     		$scope.atributos = [];
+    		$scope.vantagens = [];
+    		$scope.desvantagens = [];
 //    		$scope.pericias = [];
 //    		$scope.magias = [];
-//    		$scope.vantagens = [];
-//    		$scope.desvantagens = [];
 //    		$scope.racas = [];
 //    		$scope.classes = [];
 //    		$scope.profissoes = [];
     		
     		buscarCabecalhoFicha();
     		buscarAtributos();
+    		console.log($scope.atributos);
+    		buscarVantagens();
+    		buscarDesvantagens();
 //    		buscarPericias();
 //    		buscarMagias();
-//    		buscarVantagens();
-//    		buscarDesvantagens();
 //    		buscarRacas();
 //    		buscarClasses();
 //    		buscarProfissao();
+    		
+    		$scope.cabecalhoResult = {};
+    		$scope.atributoResult = {};
+    		$scope.vantagemResult = {};
+    		$scope.desvantagemResult = {};
     	}
     	
     	function buscarCabecalhoFicha() {
     		$scope.cabecalhoFicha = {};
     		$scope.cabecalhoFicha.flagAtivo = true;
-    		$scope.cabecalhoFicha.sistema = $scope.sistema
+    		$scope.cabecalhoFicha.sistema = $scope.sistema;
     		
     		CabecalhoFichaService.buscarCabecalhoFicha(
 	    		{cabecalhoFicha : $scope.cabecalhoFicha},
@@ -48,7 +61,7 @@ angular.module('UserApp')
     	function buscarAtributos() {
     		$scope.atributo = {};
     		$scope.atributo.flagAtivo = true;
-    		$scope.atributo.sistema = $scope.sistema
+    		$scope.atributo.sistema = $scope.sistema;
     		
     		AtributoService.buscarAtributo(
 	    		{atributo : $scope.atributo},
@@ -57,6 +70,36 @@ angular.module('UserApp')
 					
 				}, function(){
 					console.log("Erro: buscar atributos");
+				});
+    	}
+    	
+    	function buscarVantagens() {
+    		$scope.vantagem = {};
+    		$scope.vantagem.flagAtivo = true;
+    		$scope.vantagem.sistema = $scope.sistema;
+    		
+    		VantagemService.buscarVantagem(
+	    		{vantagem : $scope.vantagem},
+				function(vantagens){
+	    			$scope.vantagens = vantagens;
+					
+				}, function(){
+					console.log("Erro: buscar vantagens");
+				});
+    	}
+    	
+    	function buscarDesvantagens() {
+    		$scope.desvantagem = {};
+    		$scope.desvantagem.flagAtivo = true;
+    		$scope.desvantagem.sistema = $scope.sistema;
+    		
+    		DesvantagemService.buscarDesvantagem(
+	    		{desvantagem : $scope.desvantagem},
+				function(desvantagens){
+	    			$scope.desvantagens = desvantagens;
+					
+				}, function(){
+					console.log("Erro: buscar vantagens");
 				});
     	}
     	
@@ -83,32 +126,6 @@ angular.module('UserApp')
 //					
 //				}, function(){
 //					console.log("Erro: buscar magias");
-//				});
-//    	}
-//    	
-//    	function buscarVantagens() {
-//    		var sistema = $scope.sistemaBatalha;
-//    		
-//    		VantagemService.buscarVantagem(
-//	    		{sistema : sistema},
-//				function(vantagens){
-//	    			$scope.vantagens = vantagens;
-//					
-//				}, function(){
-//					console.log("Erro: buscar vantagens");
-//				});
-//    	}
-//    	
-//    	function buscarDesvantagens() {
-//    		var sistema = $scope.sistemaBatalha;
-//    		
-//    		DesvantagemService.buscarDesvantagem(
-//	    		{sistema : sistema},
-//				function(desvantagens){
-//	    			$scope.desvantagens = desvantagens;
-//					
-//				}, function(){
-//					console.log("Erro: buscar vantagens");
 //				});
 //    	}
 //    	

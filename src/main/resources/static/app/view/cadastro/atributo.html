@@ -5,6 +5,7 @@
 <form name="formAtributo">
 	<input type="hidden" ng-model="atributo.idAtributo">
 	<input type="text" class="form-control" ng-model="atributo.nome" placeholder="Nome do Atributo">
+	<input type="text" class="form-control" ng-model="atributo.sigla" placeholder="Sigla do Atributo">
   	<input type="text" class="form-control" ng-model="atributo.descricao" placeholder="Descricao do Atributo">
 	<select class="form-control" ng-model="atributo.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
@@ -34,6 +35,7 @@
 			<tr>
 				<th>{{'ID' | translate}}</th>
 				<th>{{'NAME' | translate}}</th>
+				<th>Sigla</th>
 				<th>{{'DESCRIPTION' | translate}}</th>
 				<th>{{'SYSTEM' | translate}}</th>
 				<th>{{'ACTIVE' | translate}}</th>
@@ -44,6 +46,7 @@
 			<tr ng-repeat="atributo in atributos">
 				<td>{{atributo.idAtributo}}</td>
 				<td>{{atributo.nome}}</td>
+				<td>{{atributo.sigla}}</td>
 				<td>{{atributo.descricao}}</td>
 				<td>{{atributo.sistema.nome}}</td>
 				<td>{{atributo.flagAtivo}}</td>

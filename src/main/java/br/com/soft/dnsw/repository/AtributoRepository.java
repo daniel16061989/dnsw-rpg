@@ -11,5 +11,5 @@ import br.com.soft.dnsw.repository.querys.AtributoQuery;
 public interface AtributoRepository extends JpaRepository<Atributo, Integer> {
 
 	@Query(value=AtributoQuery.FIND_BY_EXAMPLE, nativeQuery=true)
-	List<Atributo> findByExample(String nome, String descricao, Integer idSistema, Boolean flagAtivo);
+	List<Atributo> findByExample(String nome, String descricao, String sigla, Integer idSistema, Boolean flagAtivo);
 }

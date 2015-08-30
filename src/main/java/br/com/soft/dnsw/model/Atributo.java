@@ -22,9 +22,18 @@ public class Atributo implements Serializable {
 
 	@Column(name = "nome")
 	private String nome;
+	
+	@Column(name = "sigla")
+	private String sigla;
 
 	@Column(name = "descricao")
 	private String descricao;
+	
+	@Column(name = "ordem")
+	private Integer ordem;
+	
+	@Column(name = "cadastro_manual")
+	private Boolean cadastroManual;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_sistema")
@@ -37,36 +46,60 @@ public class Atributo implements Serializable {
 		return idAtributo;
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public Sistema getSistema() {
-		return sistema;
-	}
-
-	public Boolean getFlagAtivo() {
-		return flagAtivo;
-	}
-
 	public void setIdAtributo(Integer idAtributo) {
 		this.idAtributo = idAtributo;
+	}
+
+	public String getNome() {
+		return nome;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	public String getSigla() {
+		return sigla;
+	}
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+	
+	public Integer getOrdem() {
+		return ordem;
+	}
+
+	public void setOrdem(Integer ordem) {
+		this.ordem = ordem;
+	}
+	
+	public Boolean getCadastroManual() {
+		return cadastroManual;
+	}
+
+	public void setCadastroManual(Boolean cadastroManual) {
+		this.cadastroManual = cadastroManual;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 
+	public Sistema getSistema() {
+		return sistema;
+	}
+
 	public void setSistema(Sistema sistema) {
 		this.sistema = sistema;
+	}
+
+	public Boolean getFlagAtivo() {
+		return flagAtivo;
 	}
 
 	public void setFlagAtivo(Boolean flagAtivo) {

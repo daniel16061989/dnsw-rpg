@@ -26,8 +26,8 @@ public class Vantagem implements Serializable{
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@Column(name = "pre_requisito")
-	private String pre_requisito;
+	@Column(name = "nivel")
+	private Integer nivel;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_sistema")
@@ -60,12 +60,12 @@ public class Vantagem implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public String getPre_requisito() {
-		return pre_requisito;
+	public Integer getNivel() {
+		return nivel;
 	}
 
-	public void setPre_requisito(String pre_requisito) {
-		this.pre_requisito = pre_requisito;
+	public void setNivel(Integer nivel) {
+		this.nivel = nivel;
 	}
 
 	public Sistema getSistema() {

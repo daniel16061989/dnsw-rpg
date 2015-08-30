@@ -30,6 +30,12 @@ public class CabecalhoFicha implements Serializable {
 	@JoinColumn(name = "id_sistema")
 	private Sistema sistema;
 	
+	@Column(name = "ordem")
+	private Integer ordem;
+	
+	@Column(name = "cadastro_manual")
+	private Boolean cadastroManual;
+	
 	@Column(name = "flag_ativo")
 	private Boolean flagAtivo;
 

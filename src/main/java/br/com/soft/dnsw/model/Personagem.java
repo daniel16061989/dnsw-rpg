@@ -20,21 +20,6 @@ public class Personagem implements Serializable {
 	@Column(name = "id_personagem")
 	private Integer idPersonagem;
 
-	@Column(name = "nome")
-	private String nome;
-	
-	@Column(name = "nivel")
-	private Integer nivel;
-	
-	@Column(name = "experiencia")
-	private Integer experiencia;
-	
-	@Column(name = "total_experiencia")
-	private Integer tatalExperiencia;
-	
-	@Column(name = "dinheiro")
-	private Double dinheiro;
-	
 	@ManyToOne
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
@@ -56,46 +41,6 @@ public class Personagem implements Serializable {
 
 	public void setIdPersonagem(Integer idPersonagem) {
 		this.idPersonagem = idPersonagem;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public Integer getNivel() {
-		return nivel;
-	}
-
-	public void setNivel(Integer nivel) {
-		this.nivel = nivel;
-	}
-
-	public Integer getExperiencia() {
-		return experiencia;
-	}
-
-	public void setExperiencia(Integer experiencia) {
-		this.experiencia = experiencia;
-	}
-
-	public Integer getTatalExperiencia() {
-		return tatalExperiencia;
-	}
-
-	public void setTatalExperiencia(Integer tatalExperiencia) {
-		this.tatalExperiencia = tatalExperiencia;
-	}
-
-	public Double getDinheiro() {
-		return dinheiro;
-	}
-
-	public void setDinheiro(Double dinheiro) {
-		this.dinheiro = dinheiro;
 	}
 
 	public Usuario getUsuario() {

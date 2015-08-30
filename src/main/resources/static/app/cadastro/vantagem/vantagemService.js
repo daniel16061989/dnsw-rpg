@@ -1,7 +1,7 @@
 angular.module('UserApp')
     .factory('VantagemService', function($resource, $rootScope) {
         
-        var resource = $resource($rootScope.url+'atributo', {}, 
+        var resource = $resource($rootScope.url+'vantagem', {}, 
     			{updateNow: {
     				method: 'PUT'
     			}

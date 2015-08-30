@@ -6,7 +6,7 @@
 	<input type="hidden" ng-model="classe.idClasse">
 	<input type="text" class="form-control" ng-model="classe.nome" placeholder="Nome do Classe">
   	<input type="text" class="form-control" ng-model="classe.descricao" placeholder="Descricao do Classe">
-	<select class="form-control">
+	<select class="form-control" ng-model="classe.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">

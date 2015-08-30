@@ -1,27 +1,54 @@
-<div ng-init="tab=1">
+<div ng-init="tab=1" style="margin-top: 20px;">
 	
 	<ul class="tabs-nav">
-	  <li><a ng-click="tab=1" ng-class="{'active' : tab==1}">Aba 1</a></li>
-	  <li><a ng-click="tab=2" ng-class="{'active' : tab==2}">Aba 2</a></li>
-	  <li><a ng-click="tab=3" ng-class="{'active' : tab==3}">Aba 3</a></li>
+	  <li><a ng-click="tab=1" ng-class="{'active' : tab==1}">{{'HEADER' | translate}}</a></li>
+	  <li><a ng-click="tab=2" ng-class="{'active' : tab==2}">{{'ATTRIBUTE' | translate}}</a></li>
+	  <li><a ng-click="tab=3" ng-class="{'active' : tab==3}">{{'ADVANTAGE' | translate}}</a></li>
+	  <li><a ng-click="tab=4" ng-class="{'active' : tab==4}">{{'DRAWBACK' | translate}}</a></li>
 	</ul>
-
+	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="salvarFicha()">{{'SAVE' | translate}}</button>
 	<div class="tabs-container">
 		<div class="tab-content" ng-show="tab == 1">
-			<h3>Primeira aba</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores laborum doloribus iusto quaerat dicta nemo aperiam. Voluptas repudiandae, enim, illum perspiciatis harum officia inventore iusto fugit, repellat asperiores maiores.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores laborum doloribus iusto quaerat dicta nemo aperiam. Voluptas repudiandae, enim, illum perspiciatis harum officia inventore iusto fugit, repellat asperiores maiores.</p>
+			<h4>{{'HEADER' | translate}}</h4>
+			<input type="text" class="form-control" ng-repeat="cabecalho in cabecalhos" placeholder="{{cabecalho.nome}}" ng-model="cabecalhoResult[cabecalho.nome]">
 		</div>
 
 		<div class="tab-content" ng-show="tab == 2">
-			<h3>Segunda aba</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit dolorem quae, quo nobis omnis? Officia quibusdam quaerat assumenda ipsam, et quos laborum quae ex iste numquam laboriosam obcaecati iure.</p>
+			<h4>{{'ATTRIBUTE' | translate}}</h4>
+			<input type="text" class="form-control" ng-repeat="atributo in atributos" placeholder="{{atributo.nome}}" ng-model="atributoResult[atributo.nome]">
 		</div>
 
 		<div class="tab-content" ng-show="tab == 3">
-			<h3>Terceira aba</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis totam quibusdam maxime quidem id ducimus, esse aliquid in facilis quisquam ut possimus enim voluptatum quas accusamus, necessitatibus provident. Doloremque, nulla.</p>
+			<h4>{{'ADVANTAGE' | translate}}</h4>
+			<input type="text" class="form-control" ng-repeat="vantagem in vantagens" placeholder="{{vantagem.nome}}" ng-model="vantagemResult[vantagem.nome]">
+			<!-- 
+			<table class="table table-striped" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th class="actions">{{'ACTIONS' | translate}}</th>
+						<th>{{'NAME' | translate}}</th>
+						<th>{{'DESCRIPTION' | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="atributo in atributos">
+						<td class="actions">
+							<label class="checkbox-inline">
+						  		<input type="checkbox" ng-model="atributo.flagAtivo"> Ativo
+						  	</label>
+						</td>
+						<td>{{atributo.nome}}</td>
+						<td>{{atributo.descricao}}</td>
+					</tr>
+				</tbody>
+			</table>  -->
+		</div>
+		
+		<div class="tab-content" ng-show="tab == 4">
+			<h4>{{'DRAWBACK' | translate}}</h4>
+			<input type="text" class="form-control" ng-repeat="desvantagem in desvantagens" placeholder="{{desvantagem.nome}}" ng-model="desvantagemResult[desvantagem.nome]">
 		</div>
 
 	</div>
+	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="salvarFicha()">{{'SAVE' | translate}}</button>
 </div>

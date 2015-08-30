@@ -46,7 +46,9 @@ angular.module('UserApp')
 		    'EDIT': 'Edit',
 		    'DELETE': 'Delete',
 		    'INACTIVATE': 'Inactivate',
-		    'PASSWORD': 'Password'
+		    'PASSWORD': 'Password',
+		    'HEADER': 'Header',
+		    'SAVE': 'Save'
 		  });
 		  $translateProvider.translations('pt', {
 			// GERAL
@@ -94,7 +96,9 @@ angular.module('UserApp')
 		    'EDIT': 'Editar',
 		    'DELETE': 'Excluir',
 		    'INACTIVATE': 'Inativar',
-		    'PASSWORD': 'Senha'
+		    'PASSWORD': 'Senha',
+		    'HEADER': 'Cabeçalho',
+		    'SAVE': 'Salvar'
 		  });
 		  $translateProvider.preferredLanguage('pt');
 	});

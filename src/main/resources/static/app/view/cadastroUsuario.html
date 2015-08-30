@@ -4,13 +4,7 @@
   
 <form name="formUsuario">
 	<input type="hidden" ng-model="usuario.idUsuario">
-	<input type="text" class="form-control" ng-model="usuario.nome" placeholder="Nome Completo">
-	<input type="text" class="form-control" ng-model="usuario.email" placeholder="Email">
-	<input type="text" class="form-control" ng-model="usuario.apelido" placeholder="Apelido">
-	<input type="text" class="form-control" ng-model="usuario.login" placeholder="login">
-	<input type="password" class="form-control" ng-model="usuario.senha" placeholder="Senha">
-	<input type="password" class="form-control" ng-model="senha" placeholder="Re-senha">
-  	
+	<input type="text" class="form-control" ng-repeat="cabecalho in cabecalhos" placeholder="cabecalho.nome" ng-model="usuario.nome">
 	<hr />
 	
 	<div class="row">

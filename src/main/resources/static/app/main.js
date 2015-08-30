@@ -102,7 +102,7 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
 				redirectTo: '/login'
 			});
     })
-    .controller('MainController', function ($scope, $rootScope, $location) {
+    .controller('MainController', function ($scope, $rootScope, $location, ValidacaoService) {
     	$rootScope.url = 'http://localhost:8080/';
     	
     	$scope.mensagem = {};
@@ -113,4 +113,5 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
     	$scope.mensagem.texto = '';
     	
     	$rootScope.iniciaNavbar = false;
+
     });

@@ -6,7 +6,7 @@
 	<input type="hidden" ng-model="efeito.idEfeito">
 	<input type="text" class="form-control" ng-model="efeito.nome" placeholder="Nome do Efeito">
   	<input type="text" class="form-control" ng-model="efeito.descricao" placeholder="Descricao do Efeito">
-	<select class="form-control">
+	<select class="form-control" ng-model="efeito.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
   	<label class="checkbox-inline">

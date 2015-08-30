@@ -37,6 +37,9 @@ public class AtributoController {
 		if(a.getNome() == null) {
 			a.setNome("");
 		}
+		if(a.getSigla() == null) {
+			a.setSigla("");
+		}
 		if(a.getDescricao() == null) {
 			a.setDescricao("");
 		}
@@ -51,7 +54,7 @@ public class AtributoController {
 		}
 		
 		return atributoRepository.findByExample(a.getNome(), 
-				a.getDescricao(), a.getSistema().getIdSistema(), a.getFlagAtivo());
+				a.getDescricao(), a.getSigla(), a.getSistema().getIdSistema(), a.getFlagAtivo());
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)

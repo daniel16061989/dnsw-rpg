@@ -9,5 +9,6 @@ public class CabecalhoFichaQuery {
 			+ " AND cabecalho_ficha.descricao LIKE CONCAT('%',?,'%') "
 			+ " AND cabecalho_ficha.id_sistema = ? "
 			+ " AND cabecalho_ficha.flag_ativo = ? "
-			+ " ORDER BY cabecalho_ficha.id_cabecalho_ficha ";
+			+ " AND cabecalho_ficha.cadastro_manual = true "
+			+ " ORDER BY cabecalho_ficha.ordem ";
 }

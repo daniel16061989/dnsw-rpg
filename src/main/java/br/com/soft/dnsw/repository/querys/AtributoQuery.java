@@ -7,7 +7,9 @@ public class AtributoQuery {
 			+ " FROM tb_atributo atributo "
 			+ " WHERE atributo.nome LIKE CONCAT('%',?,'%') "
 			+ " AND atributo.descricao LIKE CONCAT('%',?,'%') "
+			+ " AND atributo.sigla LIKE CONCAT('%',?,'%') "
 			+ " AND atributo.id_sistema = ? "
+			+ " AND atributo.cadastro_manual = true "
 			+ " AND atributo.flag_ativo = ? "
-			+ " ORDER BY atributo.id_atributo ";
+			+ " ORDER BY atributo.ordem ";
 }

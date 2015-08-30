@@ -6,7 +6,7 @@
 	<input type="hidden" ng-model="regraSistema.idRegraSistema">
 	<input type="text" class="form-control" ng-model="regraSistema.nome" placeholder="Nome do RegraSistema">
   	<input type="text" class="form-control" ng-model="regraSistema.descricao" placeholder="Descricao do RegraSistema">
-	<select class="form-control">
+	<select class="form-control" ng-model="regraSistema.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>ome}}</option>
   	</select>
   	<label class="checkbox-inline">

@@ -60,11 +60,11 @@ public class VantagemController {
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody Vantagem save(@RequestBody String vantagem) {
 		Gson gson = new Gson();
-		Vantagem a = new Vantagem();
+		Vantagem v = new Vantagem();
 		
-		a = gson.fromJson(vantagem, Vantagem.class);
+		v = gson.fromJson(vantagem, Vantagem.class);
 		
-		return vantagemRepository.save(a);
+		return vantagemRepository.save(v);
 	}
 
 }
