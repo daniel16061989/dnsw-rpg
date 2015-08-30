@@ -20,8 +20,6 @@
 
 		<div class="tab-content" ng-show="tab == 3">
 			<h4>{{'ADVANTAGE' | translate}}</h4>
-			<input type="text" class="form-control" ng-repeat="vantagem in vantagens" placeholder="{{vantagem.nome}}" ng-model="vantagemResult[vantagem.nome]">
-			<!-- 
 			<table class="table table-striped" cellspacing="0" cellpadding="0">
 				<thead>
 					<tr>
@@ -31,22 +29,37 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="atributo in atributos">
+					<tr ng-repeat="vantagem in vantagens">
 						<td class="actions">
-							<label class="checkbox-inline">
-						  		<input type="checkbox" ng-model="atributo.flagAtivo"> Ativo
-						  	</label>
+					  		<input type="checkbox" ng-model="vantagemResult[vantagem.nome]">
 						</td>
-						<td>{{atributo.nome}}</td>
-						<td>{{atributo.descricao}}</td>
+						<td>{{vantagem.nome}}</td>
+						<td>{{vantagem.descricao}}</td>
 					</tr>
 				</tbody>
-			</table>  -->
+			</table>
 		</div>
 		
 		<div class="tab-content" ng-show="tab == 4">
 			<h4>{{'DRAWBACK' | translate}}</h4>
-			<input type="text" class="form-control" ng-repeat="desvantagem in desvantagens" placeholder="{{desvantagem.nome}}" ng-model="desvantagemResult[desvantagem.nome]">
+			<table class="table table-striped" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th class="actions">{{'ACTIONS' | translate}}</th>
+						<th>{{'NAME' | translate}}</th>
+						<th>{{'DESCRIPTION' | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="desvantagem in desvantagens">
+						<td class="actions">
+					  		<input type="checkbox" ng-model="desvantagemResult[desvantagem.nome]">
+						</td>
+						<td>{{vantagem.nome}}</td>
+						<td>{{vantagem.descricao}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 	</div>
