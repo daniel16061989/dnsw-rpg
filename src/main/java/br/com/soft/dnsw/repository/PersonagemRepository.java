@@ -9,6 +9,6 @@ import br.com.soft.dnsw.model.Personagem;
 
 public interface PersonagemRepository extends JpaRepository<Personagem, Integer> {
 
-	@Query(value = "SELECT personagem.* FROM tb_personagem WHERE id_campanha is null AND id_usuario = ? AND id_sistema = ? ", nativeQuery = true)
+	@Query(value = "SELECT * FROM tb_personagem WHERE id_campanha is null AND id_usuario = ? AND id_sistema = ? ", nativeQuery = true)
 	List<Personagem> findByPersonagemBatalha(Integer idUsuario, Integer idSistema);
 }

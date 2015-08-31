@@ -98,6 +98,14 @@ angular.module('UserApp', ['ngRoute', 'ngResource', 'ngMessages', 'ngCookies', '
                 controller: 'VantagemController',
                 templateUrl: 'app/view/cadastro/vantagem.html'
             })
+            .when('/tendencia', {
+                controller: 'TendenciaController',
+                templateUrl: 'app/view/cadastro/tendencia.html'
+            })
+            .when('/divindade', {
+                controller: 'DivindadeController',
+                templateUrl: 'app/view/cadastro/divindade.html'
+            })
 			.otherwise({
 				redirectTo: '/login'
 			});

@@ -17,8 +17,9 @@ import br.com.soft.dnsw.repository.ItemRepository;
 import com.google.gson.Gson;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/item")
 public class ItemController {
+	
     @Autowired
     private ItemRepository itemRepository;
 

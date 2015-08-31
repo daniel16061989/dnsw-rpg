@@ -6,6 +6,7 @@
 	<input type="hidden" ng-model="regraSistema.idRegraSistema">
 	<input type="text" class="form-control" ng-model="regraSistema.nome" placeholder="Nome do RegraSistema">
   	<input type="text" class="form-control" ng-model="regraSistema.descricao" placeholder="Descricao do RegraSistema">
+  	<input type="text" class="form-control" ng-model="regraSistema.valor" placeholder="Valor da RegraSistema">
 	<select class="form-control" ng-model="regraSistema.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>ome}}</option>
   	</select>
@@ -35,6 +36,7 @@
 				<th>{{'ID' | translate}}</th>
 				<th>{{'NAME' | translate}}</th>
 				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>Valor</th>
 				<th>{{'SYSTEM' | translate}}</th>
 				<th>{{'ACTIVE' | translate}}</th>
 				<th class="actions">{{'ACTIONS' | translate}}</th>
@@ -45,6 +47,7 @@
 				<td>{{regraSistema.idRegraSistema}}</td>
 				<td>{{regraSistema.nome}}</td>
 				<td>{{regraSistema.descricao}}</td>
+				<td>{{regraSistema.valor}}</td>
 				<td>{{regraSistema.sistema.nome}}</td>
 				<td>{{regraSistema.flagAtivo}}</td>
 				<td class="actions">

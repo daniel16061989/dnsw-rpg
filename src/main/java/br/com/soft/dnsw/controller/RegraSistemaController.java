@@ -26,25 +26,28 @@ public class RegraSistemaController {
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<RegraSistema> findByExample(@PathParam(value = "regraSistema") String regraSistema) {
 		Gson gson = new Gson();
-		RegraSistema a = new RegraSistema();
+		RegraSistema r = new RegraSistema();
 		
-		a = gson.fromJson(regraSistema, RegraSistema.class);
+		r = gson.fromJson(regraSistema, RegraSistema.class);
 		
-		if(a == null) {
-			a = new RegraSistema();
+		if(r == null) {
+			r = new RegraSistema();
 		}
-		if(a.getNome() == null) {
-			a.setNome("");
+		if(r.getNome() == null) {
+			r.setNome("");
 		}
-		if(a.getDescricao() == null) {
-			a.setDescricao("");
+		if(r.getDescricao() == null) {
+			r.setDescricao("");
 		}
-		if(a.getFlagAtivo() == null) {
-			a.setFlagAtivo(Boolean.TRUE);
+		if(r.getValor() == null) {
+			r.setValor("");
+		}
+		if(r.getFlagAtivo() == null) {
+			r.setFlagAtivo(Boolean.TRUE);
 		}
 		
-		return regraSistemaRepository.findByExample(a.getNome(), 
-				a.getDescricao(), a.getSistema().getIdSistema(), a.getFlagAtivo());
+		return regraSistemaRepository.findByExample(r.getNome(), 
+				r.getDescricao(), r.getSistema().getIdSistema(), r.getFlagAtivo());
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)

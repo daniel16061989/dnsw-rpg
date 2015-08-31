@@ -6,6 +6,9 @@
 	<input type="hidden" ng-model="classe.idClasse">
 	<input type="text" class="form-control" ng-model="classe.nome" placeholder="Nome do Classe">
   	<input type="text" class="form-control" ng-model="classe.descricao" placeholder="Descricao do Classe">
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="classe.inicial"> Inicial
+  	</label>
 	<select class="form-control" ng-model="classe.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
@@ -35,6 +38,7 @@
 				<th>{{'ID' | translate}}</th>
 				<th>{{'NAME' | translate}}</th>
 				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>INICIAL</th>
 				<th>{{'SYSTEM' | translate}}</th>
 				<th>{{'ACTIVE' | translate}}</th>
 				<th class="actions">{{'ACTIONS' | translate}}</th>
@@ -45,6 +49,7 @@
 				<td>{{classe.idClasse}}</td>
 				<td>{{classe.nome}}</td>
 				<td>{{classe.descricao}}</td>
+				<td>{{classe.inicial}}</td>
 				<td>{{classe.sistema.nome}}</td>
 				<td>{{classe.flagAtivo}}</td>
 				<td class="actions">

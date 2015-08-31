@@ -26,8 +26,8 @@ public class Raca implements Serializable {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@Column(name = "pre_requisito")
-	private String pre_requisito;
+	@Column(name = "inicial")
+	private Boolean inicial;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_sistema")
@@ -59,13 +59,13 @@ public class Raca implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public String getPre_requisito() {
-		return pre_requisito;
+	
+	public Boolean getInicial() {
+		return inicial;
 	}
 
-	public void setPre_requisito(String pre_requisito) {
-		this.pre_requisito = pre_requisito;
+	public void setInicial(Boolean inicial) {
+		this.inicial = inicial;
 	}
 
 	public Sistema getSistema() {

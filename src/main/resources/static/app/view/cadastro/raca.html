@@ -6,6 +6,9 @@
 	<input type="hidden" ng-model="raca.idRaca">
 	<input type="text" class="form-control" ng-model="raca.nome" placeholder="Nome do Raca">
   	<input type="text" class="form-control" ng-model="raca.descricao" placeholder="Descricao do Raca">
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="raca.inicial"> Inicial
+  	</label>
 	<select class="form-control" ng-model="raca.sistema.idSistema">
 	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
   	</select>
@@ -35,6 +38,7 @@
 				<th>{{'ID' | translate}}</th>
 				<th>{{'NAME' | translate}}</th>
 				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>INICIAL</th>
 				<th>{{'SYSTEM' | translate}}</th>
 				<th>{{'ACTIVE' | translate}}</th>
 				<th class="actions">{{'ACTIONS' | translate}}</th>
@@ -45,6 +49,7 @@
 				<td>{{raca.idRaca}}</td>
 				<td>{{raca.nome}}</td>
 				<td>{{raca.descricao}}</td>
+				<td>{{raca.inicial}}</td>
 				<td>{{raca.sistema.nome}}</td>
 				<td>{{raca.flagAtivo}}</td>
 				<td class="actions">

@@ -1,6 +1,8 @@
 angular.module('UserApp')
     .controller('CriarPersonagemController', function ($scope, $rootScope, $location, $cookieStore, 
-    		PersonagemService, CabecalhoFichaService, AtributoService, VantagemService, DesvantagemService, PericiaService) {
+    		PersonagemService, CabecalhoFichaService, AtributoService, VantagemService, DesvantagemService, PericiaService, 
+    		RacaService, ClasseService,
+    		RegraSistemaService, ValidacaoService) {
 //    		, PericiaService, MagiaService, 
 //    		VantagemService, DesvantagemService, RacaService, ClasseService, ProfissaoService) {
     	
@@ -22,8 +24,14 @@ angular.module('UserApp')
     		$scope.vantagens = [];
     		$scope.desvantagens = [];
     		$scope.pericias = [];
+    		$scope.regrasSistema = [];
+    		
+    		$scope.racas = [];
+    		$scope.classes = [];
+    		$scope.tendencias = [];
+    		$scope.divindades = [];
+    		
 //    		$scope.magias = [];
-//    		$scope.racas = [];
 //    		$scope.classes = [];
 //    		$scope.profissoes = [];
     		
@@ -33,9 +41,10 @@ angular.module('UserApp')
     		buscarVantagens();
     		buscarDesvantagens();
     		buscarPericias();
+
+    		buscarRacas();
+    		buscarClasses();
 //    		buscarMagias();
-//    		buscarRacas();
-//    		buscarClasses();
 //    		buscarProfissao();
     		
     		$scope.cabecalhoResult = {};
@@ -113,11 +122,70 @@ angular.module('UserApp')
     		PericiaService.buscarPericia(
 	    		{pericia : $scope.pericia},
 				function(pericias){
-	    			console.log(pericias);
 	    			$scope.pericias = pericias;
 					
 				}, function(){
 					console.log("Erro: buscar pericias");
+				});
+    	}
+    	
+    	function buscarRacas() {
+    		buscarRegraSistema('RACA_CABECALHO');
+    		
+    		if(ValidacaoService.validaObjetoVazio($scope.regrasSistema)) {
+    			if($scope.regrasSistema.valor = 'true') {
+		    		$scope.raca = {};
+		    		$scope.raca.flagAtivo = true;
+		    		$scope.raca.sistema = $scope.sistema;
+		    		$scope.raca.inicial = true;
+				
+					RacaService.buscarRaca(
+			    		{raca : $scope.raca},
+						function(racas){
+			    			$scope.racas = racas;
+							
+						}, function(){
+							console.log("Erro: buscar racas");
+						});
+    			}
+    		}
+    	}
+    	
+    	function buscarClasses() {
+    		buscarRegraSistema('RACA_CABECALHO');
+    		
+    		if(ValidacaoService.validaObjetoVazio($scope.regrasSistema)) {
+    			if($scope.regrasSistema.valor = 'true') {
+		    		$scope.classe = {};
+		    		$scope.classe.flagAtivo = true;
+		    		$scope.classe.sistema = $scope.sistema;
+		    		$scope.classe.inicial = true;
+				
+					ClasseService.buscarClasse(
+			    		{classe : $scope.classe},
+						function(racas){
+			    			$scope.classes = classes;
+							
+						}, function(){
+							console.log("Erro: buscar racas");
+						});
+    			}
+    		}
+    	}
+    	
+    	function buscarRegraSistema(nomeRegra) {
+    		$scope.regraSistema = {};
+    		$scope.regraSistema.flagAtivo = true;
+    		$scope.regraSistema.sistema = $scope.sistema;
+    		$scope.regraSistema.nome = nomeRegra;
+    		
+    		RegraSistemaService.buscarRegraSistema(
+	    		{regraSistema : $scope.regraSistema},
+				function(regrasSistema){
+	    			$scope.regrasSistema = regrasSistema;
+					
+				}, function(){
+					console.log("Erro: buscar regra");
 				});
     	}
 //    	
@@ -131,32 +199,6 @@ angular.module('UserApp')
 //					
 //				}, function(){
 //					console.log("Erro: buscar magias");
-//				});
-//    	}
-//    	
-//    	function buscarRacas() { 
-//    		var sistema = $scope.sistemaBatalha;
-//		
-//    		RacaService.buscarRaca(
-//	    		{sistema : sistema},
-//				function(racas){
-//	    			$scope.racas = racas;
-//					
-//				}, function(){
-//					console.log("Erro: buscar racas");
-//				});
-//    	}
-//    	
-//    	function buscarClasses() {
-//    		var sistema = $scope.sistemaBatalha;
-//    		
-//    		ClasseService.buscarRaca(
-//	    		{sistema : sistema},
-//				function(classes){
-//	    			$scope.classes = classes;
-//					
-//				}, function(){
-//					console.log("Erro: buscar racas");
 //				});
 //    	}
 //    	
