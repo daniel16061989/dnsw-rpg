@@ -20,6 +20,31 @@ public class Personagem implements Serializable {
 	@Column(name = "id_personagem")
 	private Integer idPersonagem;
 
+	@Column(name = "nome")
+	private String nome;
+	
+	@Column(name = "experiencia")
+	private Integer experiencia;
+	
+	@Column(name = "total_experiencia")
+	private Integer totalExperiencia;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_raca")
+	private Raca raca;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_classe")
+	private Classe classe;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_tendencia")
+	private Tendencia tendencia;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_divindade")
+	private Divindade divindade;
+			
 	@ManyToOne
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
@@ -73,6 +98,62 @@ public class Personagem implements Serializable {
 
 	public void setFlagAtivo(Boolean flagAtivo) {
 		this.flagAtivo = flagAtivo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Raca getRaca() {
+		return raca;
+	}
+
+	public void setRaca(Raca raca) {
+		this.raca = raca;
+	}
+
+	public Classe getClasse() {
+		return classe;
+	}
+
+	public void setClasse(Classe classe) {
+		this.classe = classe;
+	}
+
+	public Tendencia getTendencia() {
+		return tendencia;
+	}
+
+	public void setTendencia(Tendencia tendencia) {
+		this.tendencia = tendencia;
+	}
+
+	public Divindade getDivindade() {
+		return divindade;
+	}
+
+	public void setDivindade(Divindade divindade) {
+		this.divindade = divindade;
+	}
+
+	public Integer getExperiencia() {
+		return experiencia;
+	}
+
+	public void setExperiencia(Integer experiencia) {
+		this.experiencia = experiencia;
+	}
+
+	public Integer getTotalExperiencia() {
+		return totalExperiencia;
+	}
+
+	public void setTotalExperiencia(Integer totalExperiencia) {
+		this.totalExperiencia = totalExperiencia;
 	}
 
 }

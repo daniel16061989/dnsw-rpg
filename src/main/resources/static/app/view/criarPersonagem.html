@@ -11,8 +11,18 @@
 	<div class="tabs-container">
 		<div class="tab-content" ng-show="tab == 1">
 			<h4>{{'HEADER' | translate}}</h4>
+			<input type="text" class="form-control" placeholder="{{'NAME' | translate}}" ng-model="personagem.nome">
 			<select class="form-control" ng-model="personagem.raca.idRaca">
 			    <option ng-repeat="raca in racas" value="{{raca.idRaca}}">{{raca.nome}}</option>
+		  	</select>
+		  	<select class="form-control" ng-model="personagem.classe.idClasse">
+			    <option ng-repeat="classe in classes" value="{{classe.idClasse}}">{{classe.nome}}</option>
+		  	</select>
+		  	<select class="form-control" ng-model="personagem.tendencia.idTendencia">
+			    <option ng-repeat="tendencia in tendencias" value="{{tendencia.idTendencia}}">{{tendencia.nome}}</option>
+		  	</select>
+		  	<select class="form-control" ng-model="personagem.divindade.idDivindade">
+			    <option ng-repeat="divindade in divindades" value="{{divindade.idDivindade}}">{{divindade.nome}}</option>
 		  	</select>
 			<input type="text" class="form-control" ng-repeat="cabecalho in cabecalhos" placeholder="{{cabecalho.nome}}" ng-model="cabecalhoResult[cabecalho.nome]">
 		</div>

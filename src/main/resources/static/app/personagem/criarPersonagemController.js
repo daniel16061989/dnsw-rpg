@@ -1,10 +1,10 @@
 angular.module('UserApp')
     .controller('CriarPersonagemController', function ($scope, $rootScope, $location, $cookieStore, 
     		PersonagemService, CabecalhoFichaService, AtributoService, VantagemService, DesvantagemService, PericiaService, 
-    		RacaService, ClasseService,
+    		RacaService, ClasseService, TendenciaService, DivindadeService,
     		RegraSistemaService, ValidacaoService) {
 //    		, PericiaService, MagiaService, 
-//    		VantagemService, DesvantagemService, RacaService, ClasseService, ProfissaoService) {
+//    		VantagemService, DesvantagemService, ProfissaoService) {
     	
     	init();
     	
@@ -37,13 +37,15 @@ angular.module('UserApp')
     		
     		buscarCabecalhoFicha();
     		buscarAtributos();
-    		console.log($scope.atributos);
     		buscarVantagens();
     		buscarDesvantagens();
     		buscarPericias();
 
     		buscarRacas();
     		buscarClasses();
+    		buscarTendencias();
+    		buscarDivindades();
+    		
 //    		buscarMagias();
 //    		buscarProfissao();
     		
@@ -152,22 +154,64 @@ angular.module('UserApp')
     	}
     	
     	function buscarClasses() {
-    		buscarRegraSistema('RACA_CABECALHO');
+    		buscarRegraSistema('CLASSE_CABECALHO');
     		
-    		if(ValidacaoService.validaObjetoVazio($scope.regrasSistema)) {
+    		if(!ValidacaoService.validaObjetoVazio($scope.regrasSistema)) {
     			if($scope.regrasSistema.valor = 'true') {
 		    		$scope.classe = {};
 		    		$scope.classe.flagAtivo = true;
 		    		$scope.classe.sistema = $scope.sistema;
 		    		$scope.classe.inicial = true;
-				
+		    		
 					ClasseService.buscarClasse(
 			    		{classe : $scope.classe},
-						function(racas){
+						function(classes){
 			    			$scope.classes = classes;
 							
 						}, function(){
-							console.log("Erro: buscar racas");
+							console.log("Erro: buscar classe");
+						});
+    			}
+    		}
+    	}
+    	
+    	function buscarTendencias() {
+    		buscarRegraSistema('TENDENCIA_CABECALHO');
+    		
+    		if(!ValidacaoService.validaObjetoVazio($scope.regrasSistema)) {
+    			if($scope.regrasSistema.valor = 'true') {
+		    		$scope.tendencia = {};
+		    		$scope.tendencia.flagAtivo = true;
+		    		$scope.tendencia.sistema = $scope.sistema;
+				
+					TendenciaService.buscarTendencia(
+			    		{tendencia : $scope.tendencia},
+						function(tendencias){
+			    			$scope.tendencias = tendencias;
+							
+						}, function(){
+							console.log("Erro: buscar tendencias");
+						});
+    			}
+    		}
+    	}
+    	
+    	function buscarDivindades() {
+    		buscarRegraSistema('DIVINDADE_CABECALHO');
+    		
+    		if(!ValidacaoService.validaObjetoVazio($scope.regrasSistema)) {
+    			if($scope.regrasSistema.valor = 'true') {
+		    		$scope.divindade = {};
+		    		$scope.divindade.flagAtivo = true;
+		    		$scope.divindade.sistema = $scope.sistema;
+				
+		    		DivindadeService.buscarDivindade(
+			    		{divindade : $scope.divindade},
+						function(divindades){
+			    			$scope.divindades = divindades;
+							
+						}, function(){
+							console.log("Erro: buscar divindade");
 						});
     			}
     		}
