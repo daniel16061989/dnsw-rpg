@@ -1,0 +1,57 @@
+<h4 class="page-header">Divindade RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formDivindade">
+	<input type="hidden" ng-model="divindade.idDivindade">
+	<input type="text" class="form-control" ng-model="divindade.nome" placeholder="Nome do Divindade">
+  	<input type="text" class="form-control" ng-model="divindade.descricao" placeholder="Descricao do Divindade">
+	<select class="form-control" ng-model="divindade.sistema.idSistema">
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="divindade.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarDivindade()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarDivindade()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparDivindade()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="divindade in divindades">
+				<td>{{divindade.idDivindade}}</td>
+				<td>{{divindade.nome}}</td>
+				<td>{{divindade.descricao}}</td>
+				<td>{{divindade.sistema.nome}}</td>
+				<td>{{divindade.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarDivindade(divindade)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarDivindade(divindade)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

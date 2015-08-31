@@ -1,0 +1,57 @@
+<h4 class="page-header">Tendencia RPG</h4>
+
+<div mensagem-directive></div>
+  
+<form name="formTendencia">
+	<input type="hidden" ng-model="tendencia.idTendencia">
+	<input type="text" class="form-control" ng-model="tendencia.nome" placeholder="Nome do Tendencia">
+  	<input type="text" class="form-control" ng-model="tendencia.descricao" placeholder="Descricao do Tendencia">
+	<select class="form-control" ng-model="tendencia.sistema.idSistema">
+	    <option ng-repeat="sistema in sistemas" value="{{sistema.idSistema}}">{{sistema.nome}}</option>
+  	</select>
+  	<label class="checkbox-inline">
+  		<input type="checkbox" ng-model="tendencia.flagAtivo"> Ativo
+  	</label>
+  	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="button" class="btn btn-primary" ng-click="salvarTendencia()">Salvar</button>
+	  	<a class="btn btn-success" ng-click="buscarTendencia()">Pesquisar</a>
+		<a class="btn btn-default" ng-click="limparTendencia()">Limpar</a>
+	  </div>
+	</div>
+
+</form>
+  
+<hr />
+	
+<div class="table-responsive col-md-12">
+
+	<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>{{'ID' | translate}}</th>
+				<th>{{'NAME' | translate}}</th>
+				<th>{{'DESCRIPTION' | translate}}</th>
+				<th>{{'SYSTEM' | translate}}</th>
+				<th>{{'ACTIVE' | translate}}</th>
+				<th class="actions">{{'ACTIONS' | translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="tendencia in tendencias">
+				<td>{{tendencia.idTendencia}}</td>
+				<td>{{tendencia.nome}}</td>
+				<td>{{tendencia.descricao}}</td>
+				<td>{{tendencia.sistema.nome}}</td>
+				<td>{{tendencia.flagAtivo}}</td>
+				<td class="actions">
+					<a class="btn btn-warning btn-xs" ng-click="editarTendencia(tendencia)">{{'EDIT' | translate}}</a>
+					<a class="btn btn-danger btn-xs" ng-click="inativarTendencia(tendencia)">{{'INACTIVATE' | translate}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
