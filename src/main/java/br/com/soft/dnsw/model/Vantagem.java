@@ -32,6 +32,10 @@ public class Vantagem implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "id_sistema")
 	private Sistema sistema;
+
+	private Integer custo;
+	
+	private Character tipoVantagem;
 	
 	@Column(name = "flag_ativo")
 	private Boolean flagAtivo;

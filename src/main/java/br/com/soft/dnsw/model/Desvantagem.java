@@ -22,7 +22,10 @@ public class Desvantagem implements Serializable{
 
 	@Column(name = "nome")
 	private String nome;
-
+	
+	@Column (name = "custo")
+	private String custo;
+		
 	@Column(name = "descricao")
 	private String descricao;
 	
@@ -72,5 +75,15 @@ public class Desvantagem implements Serializable{
 	public void setFlagAtivo(Boolean flagAtivo) {
 		this.flagAtivo = flagAtivo;
 	}
+
+	public String getCusto() {
+		return custo;
+	}
+
+	public void setCusto(String custo) {
+		this.custo = custo;
+	}
+	
+	
 
 }

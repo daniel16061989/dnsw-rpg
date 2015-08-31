@@ -1,5 +1,4 @@
 package br.com.soft.dnsw.model;
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
